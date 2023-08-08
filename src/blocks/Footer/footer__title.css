@@ -1,0 +1,10 @@
+.footer__title{
+    margin: 79px 70px 20px 70px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #A0A0A0;
+    border-bottom: 1px solid #424242;
+}

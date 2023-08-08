@@ -1,0 +1,89 @@
+@import url(./vendor/normalize.css);
+
+@import url(./blocks/body/body.css);
+@import url(./blocks/app/app.css);
+
+@import url(./blocks/Main/Promo/Promo.css);
+@import url(./blocks/Main/Promo/promo__icon.css);
+@import url(./blocks/Main/Promo/promo__position.css);
+@import url(./blocks/Main/Promo/promo__button.css);
+@import url(./blocks/Main/Promo/promo__singin.css);
+@import url(./blocks/Main/Promo/promo__singup.css);
+@import url(./blocks/Main/Promo/promo__text.css);
+@import url(./blocks/Main/Promo/promo__buttomFotter.css);
+
+@import url(./blocks/Main/AboutProject/AboutProject.css);
+@import url(./blocks/Main/AboutProject/AboutProject__project.css);
+@import url(./blocks/Main/AboutProject/aboutProject__position.css);
+@import url(./blocks/Main/AboutProject/aboutProject__list.css);
+@import url(./blocks/Main/AboutProject/aboutProject__grid.css);
+@import url(./blocks/Main/AboutProject/project__week-left.css);
+@import url(./blocks/Main/AboutProject/project__week-right.css);
+
+@import url(./blocks/Main/Techs/techs.css);
+@import url(./blocks/Main/Techs/techs__text.css);
+@import url(./blocks/Main/Techs/techs__list.css);
+@import url(./blocks/Main/Techs/techs__list-list.css);
+
+@import url(./blocks/Main/AboutMe/AboutMe.css);
+@import url(./blocks/Main/AboutMe/aboutMe__student.css);
+
+@import url(./blocks/Main/Portfolio/portfolio.css);
+@import url(./blocks/Main/Portfolio/portfolio__title.css);
+@import url(./blocks/Main/Portfolio/portfolio__link.css);
+@import url(./blocks/Main/Portfolio/portfolio__block.css);
+@import url(./blocks/Main/Portfolio/portfolio__text.css);
+@import url(./blocks/Main/Portfolio/portfolio__icon.css);
+
+@import url(./blocks/Movies/SearchForm/searchForm.css);
+@import url(./blocks/Movies/SearchForm/searchForm__container.css);
+@import url(./blocks/Movies/SearchForm/searchForm__inputBox.css);
+@import url(./blocks/Movies/SearchForm/searchForm__button.css);
+@import url(./blocks/Movies/SearchForm/searchForm__film.css);
+@import url(./blocks/Movies/SearchForm/searchForm__form.css);
+
+
+@import url(./blocks/Footer/footer.css);
+@import url(./blocks/Footer/footer__title.css);
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 200px;
+    height: 100px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  
+  input:checked + label {
+    background: #bada55;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 130px;
+  }

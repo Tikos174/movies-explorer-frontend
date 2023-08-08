@@ -1,0 +1,6 @@
+.searchForm__container{
+    display: flex;
+    margin: 80px 80px 87px 70px;
+    flex-direction: row;
+    align-items: center;
+}

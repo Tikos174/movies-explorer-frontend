@@ -1,0 +1,19 @@
+import icom from '../../images/logo.svg'
+
+function Header() {
+  return (
+    <div className="promo__position">
+      <img className="promo__icon" src={icom}></img>
+      <div className="promo__button">
+        <a href="gg" className="promo__singup">
+          Регистрация
+        </a>
+        <a href="gg" className="promo__singin">
+          Войти
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export default Header;

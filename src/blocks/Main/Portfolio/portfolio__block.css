@@ -1,0 +1,8 @@
+.portfolio__block{
+    padding: 20px 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+    box-sizing: border-box;
+}
