@@ -12,6 +12,8 @@
 @import url(./blocks/Main/Promo/promo__text.css);
 @import url(./blocks/Main/Promo/promo__buttomFotter.css);
 
+@import url(./blocks/Movies/Preloader/preloader.css);
+
 @import url(./blocks/Main/AboutProject/AboutProject.css);
 @import url(./blocks/Main/AboutProject/AboutProject__project.css);
 @import url(./blocks/Main/AboutProject/aboutProject__position.css);
@@ -54,44 +56,23 @@
 @import url(./blocks/Register/register.css);
 @import url(./blocks/Register/register__title.css);
 @import url(./blocks/Register/register__form.css);
+@import url(./blocks/Register/register__name.css);
+@import url(./blocks/Register/register__input-name.css);
+@import url(./blocks/Register/register__link-login.css);
+@import url(./blocks/Register/register__bottom-box.css);
+@import url(./blocks/Register/register__singin.css);
+@import url(./blocks/Register/register__text-login.css);
 
+@import url(./blocks/Login/login.css);
+
+@import url(./blocks/Profile/profil.css);
+@import url(./blocks/Profile/profil__info.css);
+@import url(./blocks/Profile/profil__input.css);
+@import url(./blocks/Profile/profil__input-name.css);
+@import url(./blocks/Profile/profil__name.css);
+@import url(./blocks/Profile/profil__box-button.css);
+@import url(./blocks/Profile/profil__singup.css);
+@import url(./blocks/Profile/profil__singout.css);
 
 @import url(./blocks/Footer/footer.css);
 @import url(./blocks/Footer/footer__title.css);
-
-input[type=checkbox]{
-    height: 0;
-    width: 0;
-    visibility: hidden;
-  }
-  
-  label {
-    cursor: pointer;
-    width: 36px;
-    height: 20px;
-    background: grey;
-    display: block;
-    border-radius: 100px;
-    position: relative;
-  }
-  
-  label:after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    border-radius: 90px;
-    transition: 0.3s;
-  }
-  
-  input:checked + label {
-    background: #bada55;
-  }
-  
-  input:checked + label:after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-  }

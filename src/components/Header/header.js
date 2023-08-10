@@ -2,7 +2,7 @@ import icom from '../../images/logo.svg'
 
 function Header() {
   return (
-    <div className="promo__position">
+    <header className="promo__position">
       <img className="promo__icon" src={icom}></img>
       <div className="promo__button">
         <a href="gg" className="promo__singup">
@@ -12,7 +12,7 @@ function Header() {
           Войти
         </a>
       </div>
-    </div>
+    </header>
   );
 }
 

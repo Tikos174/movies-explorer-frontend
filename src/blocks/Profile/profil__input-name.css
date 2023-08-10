@@ -1,0 +1,12 @@
+.profil__input-name {
+  width: 410px;
+  padding: 17px 0 17px 0;
+  border: none;
+  border-bottom: 1px solid #424242;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  color: #ffffff;
+  background: transparent;
+}

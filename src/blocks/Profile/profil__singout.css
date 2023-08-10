@@ -1,0 +1,14 @@
+.profil__singout{
+    padding: 0;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    text-align: center;
+    color: #EE3465;
+    text-decoration: none;
+    background-color: transparent;
+}

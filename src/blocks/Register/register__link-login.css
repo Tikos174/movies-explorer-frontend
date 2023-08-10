@@ -1,0 +1,14 @@
+.register__link-login{
+    margin: 69px 0 16px 0;
+    width: 396px;
+    height: 45px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;    
+    cursor: pointer;
+    background-color: #4285F4;
+    color: #FFFFFF;
+    border: none;
+}

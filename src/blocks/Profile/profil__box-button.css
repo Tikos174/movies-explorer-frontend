@@ -1,0 +1,6 @@
+.profil__box-button{
+    display: flex;
+    flex-direction: column;
+    margin-top: 220px;
+    align-items: center;
+}
