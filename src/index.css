@@ -41,6 +41,19 @@
 @import url(./blocks/Movies/SearchForm/searchForm__button.css);
 @import url(./blocks/Movies/SearchForm/searchForm__film.css);
 @import url(./blocks/Movies/SearchForm/searchForm__form.css);
+@import url(./blocks/Movies/SearchForm/searchForm__switch-block.css);
+@import url(./blocks/Movies/SearchForm/searchForm__short-films.css);
+@import url(./blocks/Movies/SearchForm/searchForm__cards.css);
+@import url(./blocks/Movies/SearchForm/searchForm__card-img.css);
+@import url(./blocks/Movies/SearchForm/searchForm__card-text.css);
+@import url(./blocks/Movies/SearchForm/searchForm__card-time.css);
+@import url(./blocks/Movies/SearchForm/searchForm__buttonStill.css);
+@import url(./blocks/Movies/SearchForm/searchForm__container-seach.css);
+
+
+@import url(./blocks/Register/register.css);
+@import url(./blocks/Register/register__title.css);
+@import url(./blocks/Register/register__form.css);
 
 
 @import url(./blocks/Footer/footer.css);
@@ -54,9 +67,8 @@ input[type=checkbox]{
   
   label {
     cursor: pointer;
-    text-indent: -9999px;
-    width: 200px;
-    height: 100px;
+    width: 36px;
+    height: 20px;
     background: grey;
     display: block;
     border-radius: 100px;
@@ -66,10 +78,10 @@ input[type=checkbox]{
   label:after {
     content: '';
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 90px;
-    height: 90px;
+    top: 3px;
+    left: 3px;
+    width: 15px;
+    height: 15px;
     background: #fff;
     border-radius: 90px;
     transition: 0.3s;
@@ -82,8 +94,4 @@ input[type=checkbox]{
   input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
-  }
-  
-  label:active:after {
-    width: 130px;
   }
