@@ -3,7 +3,7 @@ import logo from "../../images/logo_register.svg";
 function Register() {
   return (
     <section className="register">
-      <div>
+      <div className="">
         <img className="register__logo" src={logo} alt="Movies Explorer" />
         <h2 className="register__title">Добро пожаловать!</h2>
       </div>

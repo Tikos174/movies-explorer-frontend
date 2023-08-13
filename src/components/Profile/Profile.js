@@ -1,5 +1,8 @@
+import Header from "../Header/header";
+
 function Profile() {
   return (
+    <><Header />
     <section className="profil">
       <h2 className="profil__info">Привет, Виталий!</h2>
       <form className="profil__form">
@@ -14,13 +17,13 @@ function Profile() {
       </form>
       <div className="profil__box-button">
         <button className="profil__singup">
-        Редактировать
+          Редактировать
         </button>
         <button className="profil__singout">
-        Выйти из аккаунта
+          Выйти из аккаунта
         </button>
       </div>
-    </section>
+    </section></>
   );
 }
 

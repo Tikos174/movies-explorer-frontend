@@ -13,7 +13,7 @@ function Login() {
         <p className="register__name">Пароль</p>
         <input className="register__input-name" />
       </form>
-      <button className="register__link-login">Зарегистрироваться</button>
+      <button className="register__link-login login__fix">Войти</button>
       <div className="register__bottom-box">
         <h2 className="register__text-login">Ещё не зарегистрированы?</h2>
         <a href="" className="register__singin">

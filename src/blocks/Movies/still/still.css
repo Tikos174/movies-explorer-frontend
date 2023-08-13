@@ -1,0 +1,12 @@
+.still{
+    width: 320px;
+    height: 36px;
+    background: none;
+    border: 1px solid #424242;
+    border-radius: 5px;
+    color: #ffffff;
+    margin: 116px 0 81px 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+}

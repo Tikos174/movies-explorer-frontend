@@ -1,8 +1,3 @@
-.register{
-    width: 100%;
-    height: 626px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.register {
+  margin: 68px 0 10px 0;
 }

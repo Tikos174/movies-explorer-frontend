@@ -4,10 +4,10 @@ import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 function SavedMovies() {
   return (
     <>
-        <SearchForm />
-    <MoviesCardList />
+      <SearchForm />
+      <MoviesCardList />
     </>
-  )
+  );
 }
 
 export default SavedMovies;

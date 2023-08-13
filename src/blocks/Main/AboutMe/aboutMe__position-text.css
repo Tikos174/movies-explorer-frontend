@@ -1,0 +1,4 @@
+.aboutMe__position-text{
+    display: flex;
+    flex-direction: column;
+}

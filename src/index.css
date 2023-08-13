@@ -11,6 +11,9 @@
 @import url(./blocks/Main/Promo/promo__singup.css);
 @import url(./blocks/Main/Promo/promo__text.css);
 @import url(./blocks/Main/Promo/promo__buttomFotter.css);
+@import url(./blocks/Main/Promo/promo__Info.css);
+@import url(./blocks/Main/Promo/promo__technolog.css);
+@import url(./blocks/Main/Promo/promo__student.css);
 
 @import url(./blocks/Movies/Preloader/preloader.css);
 
@@ -21,14 +24,26 @@
 @import url(./blocks/Main/AboutProject/aboutProject__grid.css);
 @import url(./blocks/Main/AboutProject/project__week-left.css);
 @import url(./blocks/Main/AboutProject/project__week-right.css);
+@import url(./blocks/Main/AboutProject/aboutProject__text.css);
+@import url(./blocks/Main/AboutProject/project__weel-text.css);
 
 @import url(./blocks/Main/Techs/techs.css);
 @import url(./blocks/Main/Techs/techs__text.css);
 @import url(./blocks/Main/Techs/techs__list.css);
-@import url(./blocks/Main/Techs/techs__list-list.css);
+@import url(./blocks/Main/Techs/techs__technologies-list.css);
+@import url(./blocks/Main/Techs/techs__technologies-text.css);
+@import url(./blocks/Main/Techs/techs__technologies-info.css);
+@import url(./blocks/Main/Techs/techs__technologies-li.css);
 
 @import url(./blocks/Main/AboutMe/AboutMe.css);
 @import url(./blocks/Main/AboutMe/aboutMe__student.css);
+@import url(./blocks/Main/AboutMe/aboutMe__position-info.css);
+@import url(./blocks/Main/AboutMe/aboutMe__photo.css);
+@import url(./blocks/Main/AboutMe/aboutMe__info.css);
+@import url(./blocks/Main/AboutMe/aboutMe__profession.css);
+@import url(./blocks/Main/AboutMe/aboutMe__profession-text.css);
+@import url(./blocks/Main/AboutMe/aboutMe__githab.css);
+@import url(./blocks/Main/AboutMe/aboutMe__position-text.css);
 
 @import url(./blocks/Main/Portfolio/portfolio.css);
 @import url(./blocks/Main/Portfolio/portfolio__title.css);
@@ -51,7 +66,11 @@
 @import url(./blocks/Movies/SearchForm/searchForm__card-time.css);
 @import url(./blocks/Movies/SearchForm/searchForm__buttonStill.css);
 @import url(./blocks/Movies/SearchForm/searchForm__container-seach.css);
+@import url(./blocks/Movies/SearchForm/searchForm__info-text.css);
+@import url(./blocks/Movies/SearchForm/searchForm__position.css);
+@import url(./blocks/Movies/SearchForm/searchForm__button-save.css);
 
+@import url(./blocks/Movies/still/still.css);
 
 @import url(./blocks/Register/register.css);
 @import url(./blocks/Register/register__title.css);
@@ -64,6 +83,7 @@
 @import url(./blocks/Register/register__text-login.css);
 
 @import url(./blocks/Login/login.css);
+@import url(./blocks/Login/login__fix.css);
 
 @import url(./blocks/Profile/profil.css);
 @import url(./blocks/Profile/profil__info.css);
@@ -73,6 +93,10 @@
 @import url(./blocks/Profile/profil__box-button.css);
 @import url(./blocks/Profile/profil__singup.css);
 @import url(./blocks/Profile/profil__singout.css);
+@import url(./blocks/Profile/profil__form.css);
 
 @import url(./blocks/Footer/footer.css);
 @import url(./blocks/Footer/footer__title.css);
+@import url(./blocks/Footer/footer__data.css);
+@import url(./blocks/Footer/footer__info.css);
+@import url(./blocks/Footer/footer__githab.css);

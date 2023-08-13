@@ -5,10 +5,10 @@ function Header() {
     <header className="promo__position">
       <img className="promo__icon" src={icom}></img>
       <div className="promo__button">
-        <a href="gg" className="promo__singup">
+        <a href="/signup" className="promo__singup">
           Регистрация
         </a>
-        <a href="gg" className="promo__singin">
+        <a href="/signin" className="promo__singin">
           Войти
         </a>
       </div>

@@ -1,0 +1,10 @@
+.searchForm__button-save{
+    margin: 11px 0 0 184px;;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #313131;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}

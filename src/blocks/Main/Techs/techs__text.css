@@ -1,4 +1,8 @@
 .techs__text{
-    padding: 100px 0 0 70px;
-    margin: 0;
+    margin: 105px 70px 0 70px;
+    padding-bottom: 23px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 17px;
+    border-bottom: 1px solid #DADADA;
 }

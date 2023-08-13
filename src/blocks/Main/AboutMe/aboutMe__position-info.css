@@ -1,0 +1,7 @@
+.aboutMe__position-info{
+    margin: 45px 70px 0 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

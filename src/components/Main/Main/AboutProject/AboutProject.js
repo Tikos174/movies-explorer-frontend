@@ -2,27 +2,27 @@ function AboutProject() {
   return (
     <section className="aboutProject">
       <h2 className="aboutProject__project">О проекте</h2>
-      <li className="aboutProject__position">
-        <ul className="aboutProject__list">
+      <ul className="aboutProject__position">
+        <li className="aboutProject__list">
           Дипломный проект включал 5 этапов
-          <p>
+          <p className="aboutProject__text">
             Составление плана, работу над бэкендом, вёрстку, добавление
             функциональности и финальные доработки.
           </p>
-        </ul>
-        <ul className="aboutProject__list">
+        </li>
+        <li className="aboutProject__list">
           На выполнение диплома ушло 5 недель
-          <p>
+          <p className="aboutProject__text">
             У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было
             соблюдать, чтобы успешно защититься.
           </p>
-        </ul>
-      </li>
+        </li>
+      </ul>
       <div className="aboutProject__grid">
         <p className="project__week-left">1 неделя</p>
         <p className="project__week-right">4 недели</p>
-        <p>Back-end</p>
-        <p>Front-end</p>
+        <p className="project__weel-text">Back-end</p>
+        <p className="project__weel-text">Front-end</p>
       </div>
     </section>
   );
