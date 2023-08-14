@@ -1,6 +1,7 @@
 .searchForm__container-seach{
     display: flex;
-    margin: 77px 25px 21px 40px;
+    margin: 77px 0 19px 0;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }

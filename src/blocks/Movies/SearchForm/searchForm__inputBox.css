@@ -1,7 +1,31 @@
 .searchForm__inputBox{
-    width: 1066px;
+    width: 1083px;
     height: 50px;
     background-color: #2F2F2F;
     border-radius: 15px;
     border: none;
+}
+
+@media screen and (max-width: 1250px) {
+    .searchForm__inputBox{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 931px) {
+    .searchForm__inputBox{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 751px) {
+    .searchForm__inputBox{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .searchForm__inputBox{
+        width: 200px;
+    }
 }

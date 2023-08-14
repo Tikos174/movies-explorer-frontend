@@ -1,8 +1,8 @@
 .aboutProject__grid{
-    width: 100%;
-    margin: 156px 70px 0 0;
+    margin: 155px 71px 10px 70px;
     display: grid;
-    grid-template-columns: 228px 912px;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 36px auto;
     justify-content: center;
     align-items: center;
     text-align: center;

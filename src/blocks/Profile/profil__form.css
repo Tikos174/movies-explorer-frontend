@@ -1,3 +1,10 @@
-.profil__form{
-    margin: 84px 0 0 0;
+.profil__form {
+  min-width: 410px;
+  margin: 84px 0 0 0;
+}
+
+@media screen and (max-width: 410px) {
+  .profil__form {
+    min-width: 250px;
+  }
 }

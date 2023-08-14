@@ -1,14 +1,24 @@
-.register__link-login{
-    margin: 129px 0 16px 0;
-    width: 396px;
-    height: 45px;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;    
-    cursor: pointer;
-    background-color: #4285F4;
-    color: #FFFFFF;
-    border: none;
+.register__link-login {
+  margin: 129px 0 16px 0;
+  width: 396px;
+  height: 45px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #4285f4;
+  color: #ffffff;
+  border: none;
+}
+
+@media screen and (max-width: 400px) {
+  .register__link-login {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

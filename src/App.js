@@ -1,7 +1,6 @@
 import "./index";
 import Main from "./components/Main/Main";
 import Movies from "./components/Movies/Movies";
-import Footer from "./components/Footer/Footer";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
@@ -20,7 +19,6 @@ function App() {
         <Route path="/signin" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
