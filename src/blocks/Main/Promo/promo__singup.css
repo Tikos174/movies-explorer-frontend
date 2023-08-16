@@ -9,3 +9,10 @@
     max-width: 70px;
     max-height: 16px;
 }
+
+@media screen and (max-width: 768px) {
+    .promo__singup{
+        display: none;
+    }
+}
+  

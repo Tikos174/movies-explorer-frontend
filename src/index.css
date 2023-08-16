@@ -14,6 +14,9 @@
 @import url(./blocks/Main/Promo/promo__Info.css);
 @import url(./blocks/Main/Promo/promo__technolog.css);
 @import url(./blocks/Main/Promo/promo__student.css);
+@import url(./blocks/Main/Promo/promo__actinProfil.css);
+@import url(./blocks/Main/Promo/promo__linkfilm.css);
+@import url(./blocks/Main/Promo/promo__linkSaveFilm.css);
 
 @import url(./blocks/Movies/Preloader/preloader.css);
 
@@ -100,3 +103,9 @@
 @import url(./blocks/Footer/footer__data.css);
 @import url(./blocks/Footer/footer__info.css);
 @import url(./blocks/Footer/footer__githab.css);
+@import url(./blocks/Footer/footer__positiin-mobile.css);
+
+@import url(./blocks/window-hidden.css);
+@import url(./blocks/Main/Promo/promo__position-activProfil.css);
+@import url(./blocks/Movies/SearchForm/searchForm__korometrazhkaButton.css);
+@import url(./blocks/Main/Promo/promo__popUp.css);

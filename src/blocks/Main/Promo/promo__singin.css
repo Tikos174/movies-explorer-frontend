@@ -11,3 +11,9 @@
     line-height: 17px;
     text-decoration: none;
 }
+
+@media screen and (max-width: 768px) {
+    .promo__singin{
+        display: none;
+    }
+}

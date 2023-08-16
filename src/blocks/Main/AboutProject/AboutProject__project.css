@@ -7,3 +7,9 @@
     padding-top: 5px;
     border-bottom: 1px solid #DADADA;
 }
+
+@media screen and (max-width: 550px) {
+    .aboutProject__project{
+        margin: 0 18px 0 18px;
+    }
+}

@@ -1,0 +1,11 @@
+.footer__positiin-mobile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width: 441px) {
+    .footer__positiin-mobile{
+        flex-direction: column;
+    }
+}

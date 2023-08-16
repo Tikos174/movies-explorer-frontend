@@ -4,3 +4,9 @@
     line-height: 17px;
     margin-top: 110px;
 }
+
+@media screen and (max-width: 550px) {
+    .techs__technologies-text{
+        font-size: 30px;
+    }
+}

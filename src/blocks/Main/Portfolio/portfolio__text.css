@@ -5,3 +5,9 @@
   line-height: 50px;
   color: #FFFFFF;
 }
+
+@media screen and (max-width: 441px) {
+  .portfolio__text{
+      font-size: 17px;
+  }
+}

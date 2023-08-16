@@ -1,8 +1,14 @@
-.portfolio__block{
-    margin: 32px 69px 0 69px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid #424242;
-    box-sizing: border-box;
+.portfolio__block {
+  margin: 32px 69px 0 69px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 441px) {
+  .portfolio__block {
+    margin: 32px 18px 0 18px;
+  }
 }

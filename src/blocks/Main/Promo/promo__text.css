@@ -7,3 +7,9 @@
     font-size: 46px;
     line-height: 58px;
 }
+
+@media screen and (max-width: 768px) {
+    .promo__text{
+        font-size: 34px;
+    }
+}

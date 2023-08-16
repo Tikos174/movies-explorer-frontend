@@ -8,3 +8,9 @@
     color: #000000;
     background: #2BE080;
 }
+
+@media screen and (max-width: 441px) {
+    .project__week-left{
+        font-size: 9px;
+    }
+}

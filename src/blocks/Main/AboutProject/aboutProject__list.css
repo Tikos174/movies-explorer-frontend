@@ -5,3 +5,9 @@
     list-style-type: none;
     padding: 0 0 0 33px;
 }
+
+@media screen and (max-width: 550px) {
+    .aboutProject__list{
+        padding: 0 ;
+    }
+}

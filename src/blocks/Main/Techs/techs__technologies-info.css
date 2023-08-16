@@ -3,6 +3,12 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    margin: 5px 0 0 40px;
+    margin: 0;
     text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+    .techs__technologies-text{
+        font-size: 30px;
+    }
 }
