@@ -1,13 +1,13 @@
 function Navtab() {
   return (
-      <nav className="promo__buttomFotter">
-        <a href="" className="promo__Info">
+      <nav className="navbar__buttomFotter">
+        <a href="" className="navbar__Info">
           О проекте
         </a>
-        <a href="" className="promo__technolog">
+        <a href="" className="navbar__technolog">
           Технологии
         </a>
-        <a href="" className="promo__student">
+        <a href="" className="navbar__student">
           Студент
         </a>
       </nav>

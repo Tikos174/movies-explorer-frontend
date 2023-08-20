@@ -1,19 +1,19 @@
-.promo__icon {
+.header__icon {
   min-height: 38px;
   min-width: 38px;
   margin-left: 70px;
   cursor: pointer;
-  background-image: url('../../../images/logo.svg');
+  background-image: url('../../images/logo.svg');
 }
 
 @media screen and (max-width: 768px) {
-  .promo__icon {
+  .pheader__icon {
     margin-left: 29px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .promo__icon {
+  .header__icon {
     margin-left: 15px;
   }
 }

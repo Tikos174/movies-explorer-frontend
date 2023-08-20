@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState } from 'react';
 import { useLocation } from "react-router-dom";
 
-function Header() {
+function Header(props) {
 
   const [loggenIn, setLoggenIn] = React.useState(false);
   const [loggenInImage, setLoggenInImage] = React.useState(false);
@@ -15,25 +15,25 @@ function Header() {
   }, [pathname]);
 
   return (
-    <header className={`promo__position ${loggenInImage ? "promo__position-activProfil" : ""}`}>
-      <div className='promo__actinProfil'>
-      <a href='/' className="promo__icon"></a>
-      <a href="" className={`promo__linkfilm ${loggenIn ? "window-open" : ""}`}>
+    <header className={`header__position ${loggenInImage ? "header__position-activProfil" : ""}`}>
+      <div className='header__actinProfil'>
+      <a href='/' className="header__icon"></a>
+      <a href="" className={`header__linkfilm ${loggenIn ? "window-open" : ""}`}>
       Фильмы
         </a>
-        <a href="" className={`promo__linkSaveFilm ${loggenIn ? "window-open" : ""}`}>
+        <a href="" className={`header__linkSaveFilm ${loggenIn ? "window-open" : ""}`}>
         Сохранённые фильмы
         </a>
       </div>
-      <div className="promo__button">
-        <a href="/signup" className={`promo__singup ${loggenIn ? "window-hidden" : ""}`}>
+      <div className="header__button">
+        <a href="/signup" className={`header__singup ${loggenIn ? "window-hidden" : ""}`}>
           Регистрация
         </a>
-        <a href="/signin" className={`promo__singin ${loggenIn ? "window-hidden" : ""}`}>
+        <a href="/signin" className={`header__singin ${loggenIn ? "window-hidden" : ""}`}>
           Войти
         </a>
-        <a href="" className="promo__popUp"></a>
-        <a href="" className={`promo__iconAccount ${loggenIn ? "window-open" : ""}`}></a>
+        <button onClick={props.onEditProfile} className="header__popUp"></button>
+        <a href="" className={`header__iconAccount ${loggenIn ? "window-open" : ""}`}></a>
       </div>
     </header>
   );

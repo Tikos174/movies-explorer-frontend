@@ -1,4 +1,4 @@
-.promo__button{
+.header__button{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,13 +6,13 @@
 }
 
 @media screen and (max-width: 768px) {
-    .promo__button{
+    .header__button{
         margin-right: 31px;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .promo__button{
+    .header__button{
         margin-right: 13px;
     }
 }

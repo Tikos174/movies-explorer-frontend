@@ -1,11 +1,11 @@
-.promo__Info {
+.navbar__Info {
   margin: 0;
   color: #ffffff;
   font-weight: 400;
   font-size: 14px;
 }
 
-.promo__Info:hover{
+.navbar__Info:hover{
   color: #9e9393;
   transition: 0.5s
 }

@@ -5,14 +5,12 @@ import AboutProject from "./Main/AboutProject/AboutProject";
 import Techs from "./Main/Techs/Techs";
 import AboutMe from "./Main/AboutMe/AboutMe";
 import Portfolio from "./Main/Portfolio/Portfolio";
-import Header from "../Header/header";
 import Footer from "../Footer/Footer";
 
 function Main() {
   return (
     <>
       <div className="position-content">
-        <Header />
         <Promo />
       </div>
       <Navtab />

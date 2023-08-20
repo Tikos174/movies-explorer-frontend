@@ -1,0 +1,11 @@
+.popup__accoutd {
+  background-image: url("../../images/iconMainAco.svg");
+  background-image: no-repeat;
+  margin: 0 0 124px 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  width: 105px;
+  height: 32px;
+  background-color: transparent;
+}

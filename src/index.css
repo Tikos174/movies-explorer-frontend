@@ -4,20 +4,24 @@
 @import url(./blocks/app/app.css);
 
 @import url(./blocks/Main/Promo/Promo.css);
-@import url(./blocks/Main/Promo/promo__icon.css);
-@import url(./blocks/Main/Promo/promo__position.css);
-@import url(./blocks/Main/Promo/promo__button.css);
-@import url(./blocks/Main/Promo/promo__singin.css);
-@import url(./blocks/Main/Promo/promo__singup.css);
 @import url(./blocks/Main/Promo/promo__text.css);
-@import url(./blocks/Main/Promo/promo__buttomFotter.css);
-@import url(./blocks/Main/Promo/promo__Info.css);
-@import url(./blocks/Main/Promo/promo__technolog.css);
-@import url(./blocks/Main/Promo/promo__student.css);
-@import url(./blocks/Main/Promo/promo__actinProfil.css);
-@import url(./blocks/Main/Promo/promo__linkfilm.css);
-@import url(./blocks/Main/Promo/promo__linkSaveFilm.css);
-@import url(./blocks/Main/Promo/promo__iconAccount.css);
+
+@import url(./blocks/Header/header__actinProfil.css);
+@import url(./blocks/Header/header__button.css);
+@import url(./blocks/Header/header__icon.css);
+@import url(./blocks/Header/header__iconAccount.css);
+@import url(./blocks/Header/header__linkfilm.css);
+@import url(./blocks/Header/header__linkSaveFilm.css);
+@import url(./blocks/Header/header__popUp.css);
+@import url(./blocks/Header/header__position-activProfil.css);
+@import url(./blocks/Header/header__position.css);
+@import url(./blocks/Header/header__singin.css);
+@import url(./blocks/Header/header__singup.css);
+
+@import url(./blocks/Main/NavBar/navbar__buttomFotter.css);
+@import url(./blocks/Main/NavBar/navbar__Info.css);
+@import url(./blocks/Main/NavBar/navbar__student.css);
+@import url(./blocks/Main/NavBar/navbar__technolog.css);
 
 @import url(./blocks/Movies/Preloader/preloader.css);
 
@@ -116,7 +120,14 @@
 
 @import url(./blocks/window-hidden.css);
 @import url(./blocks/window-open.css);
-@import url(./blocks/Main/Promo/promo__position-activProfil.css);
 @import url(./blocks/Movies/SearchForm/searchForm__korometrazhkaButton.css);
-@import url(./blocks/Main/Promo/promo__popUp.css);
 @import url(./blocks/position-content.css);
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/popup__close.css);
+@import url(./blocks/popup/popup__position.css);
+@import url(./blocks/popup/popup__text.css);
+@import url(./blocks/popup/popup__textFilm.css);
+@import url(./blocks/popup/popup__textSafeFilm.css);
+@import url(./blocks/popup/popup_display-open.css);
+@import url(./blocks/popup/popup__accoutd.css);

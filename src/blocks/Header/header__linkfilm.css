@@ -1,4 +1,4 @@
-.promo__linkfilm{
+.header__linkfilm{
     margin: 0 0 0 44px;
     text-decoration: none;
     color: #FFFFFF;
@@ -8,13 +8,13 @@
     opacity: 0;
 }
 
-.promo__linkfilm:hover{
+.header__linkfilm:hover{
     color: #9e9393;
     transition: 0.5s
 }
 
 @media screen and (max-width: 320px) {
-    .promo__linkfilm{
+    .header__linkfilm{
         margin: 0 0 0 31px;
     }
 }

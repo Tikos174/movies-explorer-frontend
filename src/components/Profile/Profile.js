@@ -2,7 +2,6 @@ import Header from "../Header/header";
 
 function Profile() {
   return (
-    <><Header />
     <section className="profil">
       <h2 className="profil__info">Привет, Виталий!</h2>
       <form className="profil__form">
@@ -23,7 +22,7 @@ function Profile() {
           Выйти из аккаунта
         </button>
       </div>
-    </section></>
+    </section>
   );
 }
 

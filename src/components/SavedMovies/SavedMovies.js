@@ -8,7 +8,6 @@ function SavedMovies() {
 
   return (
     <>
-    < Header />
       <SearchForm />
       <MoviesCardList />
       <Footer />
