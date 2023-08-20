@@ -1,11 +1,24 @@
 .register {
-  margin: 68px 0 10px 0;
+  margin: 65px 0 308px 0;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   .register {
+    margin: 230px 0 143px 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .register {
+    margin: 56px 0 229px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .register {
+    margin: 230px 0 8px 0;
   }
 }

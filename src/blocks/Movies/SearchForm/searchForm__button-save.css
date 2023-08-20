@@ -8,3 +8,15 @@
     cursor: pointer;
     transition: opacity 0.3s;
 }
+
+@media screen and (max-width: 768px) {
+    .searchForm__button-save {
+        margin: 13px 0 0 252px;
+    }
+  }
+
+  @media screen and (max-width: 430px){
+.searchForm__button-save {
+    margin: 13px 0 0 211px;
+}
+}

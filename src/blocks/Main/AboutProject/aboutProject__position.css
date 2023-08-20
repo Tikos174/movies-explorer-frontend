@@ -1,16 +1,23 @@
-.aboutProject__position{
-    display: flex;
-    margin: 79px 70px 0 40px;
-    padding: 0;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 17px;
+.aboutProject__position {
+  display: flex;
+  margin: 79px 70px 0 40px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 17px;
 }
 
-@media screen and (max-width: 550px) {
-    .aboutProject__position{
-        flex-direction: column;
-        margin: 60px 18px 0 18px;
-        gap: 110px;
-    }
+@media screen and (max-width: 768px) {
+  .aboutProject__position {
+    margin: 60px 35px 0 18px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .aboutProject__position {
+    margin: 66px 35px 0 18px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 124px;
+  }
 }

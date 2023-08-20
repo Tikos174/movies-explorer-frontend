@@ -6,3 +6,16 @@
     font-size: 14px;
     margin: 0 40px 0 40px;
 }
+
+.promo__technolog:hover{
+  color: #9e9393;
+  transition: 0.5s
+}
+
+
+@media screen and (max-width: 3320px) {
+    .promo__technolog{
+        margin: 0 20px 0 20px;
+    }
+}
+

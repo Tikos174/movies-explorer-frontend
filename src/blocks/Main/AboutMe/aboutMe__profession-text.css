@@ -5,3 +5,20 @@
     line-height: 20px;
     margin: 28px 0 0 0;
 }
+
+@media screen and (max-width: 768px) {
+    .aboutMe__profession-text{
+        max-width: 348px;
+        font-size: 12px;
+        line-height: 19px;
+        margin: 21px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .aboutMe__profession-text{
+        font-size: 10px;
+        line-height: 16px;
+        margin: 21px 0 0 0;
+    }
+}

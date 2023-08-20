@@ -13,9 +13,10 @@
   border: none;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .register__link-login {
-    width: 240px;
+    margin: 217px 0 16px 0;
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;

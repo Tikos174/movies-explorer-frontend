@@ -1,5 +1,12 @@
-.footer{
-    width: 100%;
-    background-color: #202020;
-    margin: 0 0 20px 0;
+.footer {
+  max-width: 1280px;
+  width: 100%;
+  background-color: #202020;
+  margin: 0 0 20px 0;
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    margin: 0 0 46px 0;
+  }
 }

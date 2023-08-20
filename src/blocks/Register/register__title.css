@@ -5,3 +5,10 @@
     line-height: 14px;
     margin: 47px 0 48px 4px;
 }
+
+@media screen and (max-width: 320px) {
+    .register__title {
+        margin: 56px 0 86px 8px;
+        font-size: 25px;
+    }
+  }

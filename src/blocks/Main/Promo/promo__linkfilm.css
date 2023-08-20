@@ -7,3 +7,14 @@
     line-height: 17px;
     opacity: 0;
 }
+
+.promo__linkfilm:hover{
+    color: #9e9393;
+    transition: 0.5s
+}
+
+@media screen and (max-width: 320px) {
+    .promo__linkfilm{
+        margin: 0 0 0 31px;
+    }
+}

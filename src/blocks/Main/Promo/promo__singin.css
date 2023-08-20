@@ -12,8 +12,21 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+.promo__singin:hover{
+    color: #9e9393;
+    transition: 0.5s
+}
+
+@media screen and (max-width: 767px) {
     .promo__singin{
         display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .promo__singin{
+        display: flex;
+        padding: 4px 16px 4px 16px;
+        font-size: 9px;
     }
 }

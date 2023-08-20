@@ -1,4 +1,11 @@
 .aboutMe__photo{
     max-width: 270px;
     max-height: 327px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutMe__photo{
+        max-width: 255px;
+    }
 }

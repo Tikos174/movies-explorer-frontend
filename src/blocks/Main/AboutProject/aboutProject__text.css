@@ -4,3 +4,16 @@
     line-height: 17px;
     margin: 31px 0 0 0;
 }
+
+@media screen and (max-width: 768px) {
+    .aboutProject__text{
+        margin: 27px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .aboutProject__text{
+        margin: 18px 0 0 0;
+        font-size: 11px;
+    }
+}

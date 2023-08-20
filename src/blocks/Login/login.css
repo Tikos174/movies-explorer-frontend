@@ -1,3 +1,18 @@
-.login{
-    margin: 68px 0 10px 0;
+.login {
+    margin: 65px 0 306px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    margin: 233px 0 53px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login {
+        display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 56px 0 161px 0;
+  }
 }

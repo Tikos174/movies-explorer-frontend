@@ -1,5 +1,13 @@
-.techs{
-    width: 100%;
-    /* height: 625px; */
-    background-color: #272727;
+.techs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #272727;
+}
+
+@media screen and (max-width: 320px) {
+  .techs {
+    background-color: #202020;
+  }
 }

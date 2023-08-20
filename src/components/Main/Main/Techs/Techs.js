@@ -1,8 +1,8 @@
 function Techs() {
   return (
     <section className="techs">
-      <h2 className="techs__text">Технологии</h2>
       <div className="techs__list">
+      <h2 className="techs__text">Технологии</h2>
         <h3 className="techs__technologies-text">7 технологий</h3>
         <p className="techs__technologies-info">
           На курсе веб-разработки мы освоили технологии, которые применили в

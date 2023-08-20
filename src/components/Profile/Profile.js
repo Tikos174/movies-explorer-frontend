@@ -8,11 +8,11 @@ function Profile() {
       <form className="profil__form">
         <div className="profil__input">
           <p className="profil__name">Имя</p>
-          <input className="profil__input-name" />
+          <input placeholder="Виталий" className="profil__input-name" />
         </div>
         <div className="profil__input">
           <p className="profil__name">E-mail</p>
-          <input className="profil__input-name" />
+          <input placeholder="deruad@bk.ru" className="profil__input-name" />
         </div>
       </form>
       <div className="profil__box-button">

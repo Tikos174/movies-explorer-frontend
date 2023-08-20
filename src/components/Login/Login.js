@@ -4,14 +4,14 @@ function Login() {
   return (
     <section className="login">
       <div>
-        <img className="register__logo" src={logo} alt="Movies Explorer" />
-        <h2 className="register__title">Рады видеть!</h2>
+        <img className="login__logo" src={logo} alt="Movies Explorer" />
+        <h2 className="login__title">Рады видеть!</h2>
       </div>
       <form className="register__form">
         <p className="register__name">E-mail</p>
-        <input className="register__input-name" />
+        <input type="email" placeholder="Email" className="register__input-name" />
         <p className="register__name">Пароль</p>
-        <input className="register__input-name" />
+        <input placeholder="password" type="password" className="register__input-name" />
       </form>
       <button className="register__link-login login__fix">Войти</button>
       <div className="register__bottom-box">

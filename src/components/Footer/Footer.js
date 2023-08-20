@@ -5,8 +5,8 @@ function Footer () {
             <div className="footer__info">
                 <p className="footer__data">&copy;{new Date().getFullYear()}</p>
                 <div className="footer__positiin-mobile">
-                <a href='' className='footer__githab'>Яндекс.Практикум</a>
-                <a href='' className='footer__githab'>Github</a>
+                <a target="_blank" href='https://practicum.yandex.ru' className='footer__githab'>Яндекс.Практикум</a>
+                <a target="_blank" href='https://github.com/Tikos174' className='footer__githab'>Github</a>
                 </div>
             </div>
             

@@ -1,7 +1,20 @@
 .profil{
-    margin: 55px 0 70px 0;
+    margin: 55px 0 372px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+    .profil {
+        margin: 216px 0 267px 0;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .profil {
+        margin: 49px 0 263px 0;
+    }
+  }
+  

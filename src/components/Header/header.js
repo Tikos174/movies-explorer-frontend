@@ -1,5 +1,3 @@
-import userEvent from '@testing-library/user-event';
-import icom from '../../images/logo.svg'
 import React, {useEffect} from 'react';
 import { useLocation } from "react-router-dom";
 
@@ -19,22 +17,23 @@ function Header() {
   return (
     <header className={`promo__position ${loggenInImage ? "promo__position-activProfil" : ""}`}>
       <div className='promo__actinProfil'>
-      <img className="promo__icon" src={icom}></img>
-      <a href="" className={`promo__linkfilm ${loggenIn ? "window-hidden" : ""}`}>
+      <a href='/' className="promo__icon"></a>
+      <a href="" className={`promo__linkfilm ${loggenIn ? "window-open" : ""}`}>
       Фильмы
         </a>
-        <a href="" className={`promo__linkSaveFilm ${loggenIn ? "window-hidden" : ""}`}>
+        <a href="" className={`promo__linkSaveFilm ${loggenIn ? "window-open" : ""}`}>
         Сохранённые фильмы
         </a>
       </div>
       <div className="promo__button">
-        <a href="/signup" className="promo__singup">
+        <a href="/signup" className={`promo__singup ${loggenIn ? "window-hidden" : ""}`}>
           Регистрация
         </a>
-        <a href="/signin" className="promo__singin">
+        <a href="/signin" className={`promo__singin ${loggenIn ? "window-hidden" : ""}`}>
           Войти
         </a>
         <a href="" className="promo__popUp"></a>
+        <a href="" className={`promo__iconAccount ${loggenIn ? "window-open" : ""}`}></a>
       </div>
     </header>
   );

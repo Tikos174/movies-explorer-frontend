@@ -10,9 +10,22 @@
     max-height: 16px;
 }
 
-@media screen and (max-width: 768px) {
+.promo__singup:hover{
+    color: #9e9393;
+    transition: 0.5s
+}
+
+@media screen and (max-width: 767px) {
     .promo__singup{
         display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .promo__singup{
+        display: flex;
+        margin: 0 14px 0 0;
+        font-size: 9px;
     }
 }
   

@@ -1,6 +1,18 @@
-.profil__box-button{
-    display: flex;
-    flex-direction: column;
-    margin-top: 204px;
-    align-items: center;
+.profil__box-button {
+  display: flex;
+  flex-direction: column;
+  margin-top: 204px;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .profil__box-button {
+    margin-top: 188px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profil__box-button {
+    margin-top: 359px;
+  }
 }

@@ -4,3 +4,9 @@
     font-weight: 400;
     font-size: 14px;
 }
+
+.promo__student:hover{
+    color: #9e9393;
+    transition: 0.5s
+  }
+  

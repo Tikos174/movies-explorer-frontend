@@ -1,9 +1,14 @@
 .promo__linkSaveFilm{
-    margin: 0 0 0 16px;
+    margin: 0 0 0 23px;
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 400;
     font-size: 12px;
     line-height: 17px;
-    opacity: 0;
+    display: none;
+}
+
+.promo__linkSaveFilm:hover{
+    color: #9e9393;
+    transition: 0.5s
 }

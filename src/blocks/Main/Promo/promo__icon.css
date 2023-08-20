@@ -1,11 +1,19 @@
 .promo__icon {
-  max-height: 38px;
-  max-width: 38px;
+  min-height: 38px;
+  min-width: 38px;
   margin-left: 70px;
+  cursor: pointer;
+  background-image: url('../../../images/logo.svg');
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .promo__icon {
-    margin-left: 14px;
+    margin-left: 29px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .promo__icon {
+    margin-left: 15px;
   }
 }

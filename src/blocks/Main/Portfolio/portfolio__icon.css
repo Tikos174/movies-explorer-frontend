@@ -5,3 +5,14 @@
     line-height: 60px;
     color: #FFFFFF;
 }
+
+.portfolio__icon:hover{
+    color: #9e9393;
+    transition: 0.5s
+  }
+
+@media screen and (max-width: 320px) {
+    .portfolio__icon {
+        font-size: 18px;
+    }
+  }

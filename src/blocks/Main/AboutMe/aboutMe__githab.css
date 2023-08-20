@@ -7,3 +7,15 @@
     font-size: 14px;
     line-height: 17px;
 }
+
+@media screen and (max-width: 768px) {
+    .aboutMe__githab{
+        padding: 64px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .aboutMe__githab{
+        padding: 39px 0 0 0;
+    }
+}

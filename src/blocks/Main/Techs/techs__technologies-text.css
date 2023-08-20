@@ -1,12 +1,19 @@
-.techs__technologies-text{
-    font-weight: 400;
-    font-size: 47px;
-    line-height: 17px;
-    margin-top: 110px;
+.techs__technologies-text {
+  font-weight: 400;
+  font-size: 47px;
+  line-height: 17px;
+  margin-top: 114px;
 }
 
-@media screen and (max-width: 550px) {
-    .techs__technologies-text{
-        font-size: 30px;
-    }
+@media screen and (max-width: 768px) {
+  .techs__technologies-text {
+    margin-top: 99px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .techs__technologies-text {
+    margin-top: 72px;
+    font-size: 28px;
+  }
 }

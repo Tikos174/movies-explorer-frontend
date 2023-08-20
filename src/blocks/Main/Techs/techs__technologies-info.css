@@ -7,8 +7,16 @@
     text-align: center;
 }
 
-@media screen and (max-width: 550px) {
-    .techs__technologies-text{
-        font-size: 30px;
+@media screen and (max-width: 768px) {
+    .techs__technologies-info{
+        max-width: 470px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .techs__technologies-info{
+        max-width: 275px;
+        font-size: 11px;
+        line-height: 19px;
     }
 }

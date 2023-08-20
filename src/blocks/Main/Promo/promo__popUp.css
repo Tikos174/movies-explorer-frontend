@@ -1,17 +1,17 @@
-.promo__popUp{
-background-image: url('../../../images/icon__COLOR_icon-mainPopup.svg');
-background-image: no-repeat;
-margin: 0;
-padding: 0;
-border: 0;
-cursor: pointer;
-width: 44px;
-height: 44px;
-display: none;
+.promo__popUp {
+  background-image: url("../../../images/icon__COLOR_icon-mainPopup.svg");
+  background-image: no-repeat;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: none;
 }
 
-@media screen and (max-width: 768px) {
-    .promo__popUp{
-        display: flex;
-    }
+@media screen and (max-width: 769px) {
+  .promo__popUp {
+    display: flex;
+  }
 }

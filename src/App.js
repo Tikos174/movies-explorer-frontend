@@ -5,12 +5,13 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import SavedMovies from './components/SavedMovies/SavedMovies'
+import Error from "./components/Error/Error";
 
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="app">
+    <main className="app">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/movies" element={<Movies />} />
@@ -18,8 +19,9 @@ function App() {
         <Route path="/saved-movies" element={<SavedMovies />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/error" element={<Error />} />
       </Routes>
-    </div>
+    </main>
   );
 }
 

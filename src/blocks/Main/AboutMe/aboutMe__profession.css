@@ -5,3 +5,10 @@
     max-width: 611px;
     margin: 40px 0 0 0;
 }
+
+@media screen and (max-width: 768px) {
+    .aboutMe__profession{
+        margin: 31px 0 0 0;
+        font-size: 11px;
+    }
+}

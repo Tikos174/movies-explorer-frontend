@@ -3,8 +3,16 @@
   margin: 84px 0 0 0;
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 768px) {
   .profil__form {
-    min-width: 250px;
+    margin: 61px 0 0 0;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .profil__form {
+    min-width: 258px;
+    margin: 44px 0 0 0;
+  }
+}
+

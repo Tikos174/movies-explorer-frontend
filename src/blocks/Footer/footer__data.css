@@ -4,3 +4,10 @@
     line-height: 16px;
     margin: 0;
 }
+
+@media screen and (max-width: 320px) {
+    .footer__data{
+        margin: 29px 0 0 0;
+        font-size: 12px;
+    }
+}

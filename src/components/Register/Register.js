@@ -10,15 +10,15 @@ function Register() {
       <form className="register__form">
         <p className="register__name">Имя</p>
         <input
-          className="register__input-name"
+          placeholder="Виталий" className="register__input-name"
         />
         <p className="register__name">E-mail</p>
         <input
-          className="register__input-name"
+          input placeholder="dsdsd@bk.ru" type="email" className="register__input-name"
         />
         <p className="register__name">Пароль</p>
         <input
-          className="register__input-name"
+           input type="password" className="register__input-name"
         />
       </form>
       <button className="register__link-login">Зарегистрироваться</button>
