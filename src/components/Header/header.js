@@ -14,6 +14,18 @@ function Header(props) {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    if (pathname === '/movies') {
+      setLoggenIn(true)
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    if (pathname === '/saved-movies') {
+      setLoggenIn(true)
+    }
+  }, [pathname]);
+
   return (
     <header className={`header__position ${loggenInImage ? "header__position-activProfil" : ""}`}>
       <div className='header__actinProfil'>
@@ -32,7 +44,7 @@ function Header(props) {
         <a href="/signin" className={`header__singin ${loggenIn ? "window-hidden" : ""}`}>
           Войти
         </a>
-        <button onClick={props.onEditProfile} className="header__popUp"></button>
+        <button onClick={props.onEditProfile} className="header__ButtonpopUp"></button>
         <a href="" className={`header__iconAccount ${loggenIn ? "window-open" : ""}`}></a>
       </div>
     </header>

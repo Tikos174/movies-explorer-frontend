@@ -4,8 +4,29 @@
 }
 
 @media screen and (max-width: 768px) {
+    .window-open{
+       display: none;
+       opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .promo__iconAccount{
        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__linkfilm{
+       display: none;
+       opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__linkSaveFilm{
+       display: none;
+       opacity: 0;
     }
 }
 

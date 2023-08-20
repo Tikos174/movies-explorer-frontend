@@ -7,8 +7,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .pheader__icon {
-    margin-left: 29px;
+  .header__icon {
+    margin-left: 30px;
   }
 }
 

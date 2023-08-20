@@ -1,4 +1,4 @@
-.header__popUp {
+.header__ButtonpopUp {
   background-image: url("../../images/icon__COLOR_icon-mainPopup.svg");
   background-image: no-repeat;
   margin: 0;
@@ -11,14 +11,14 @@
   background-color: transparent;
 }
 
-@media screen and (max-width: 769px) {
-  .header__popUp {
+@media screen and (max-width: 768px) {
+  .header__ButtonpopUp {
     display: flex;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .header__popUp {
+  .header__ButtonpopUp {
     display: flex;
   }
 }
