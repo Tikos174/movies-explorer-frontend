@@ -3,6 +3,8 @@
 @import url(./blocks/body/body.css);
 @import url(./blocks/app/app.css);
 
+@import url(./blocks/Main/main.css);
+
 @import url(./blocks/Main/Promo/Promo.css);
 @import url(./blocks/Main/Promo/promo__text.css);
 
@@ -17,6 +19,7 @@
 @import url(./blocks/Header/header__position.css);
 @import url(./blocks/Header/header__singin.css);
 @import url(./blocks/Header/header__singup.css);
+@import url(./blocks/Header/header__background.css);
 
 @import url(./blocks/Main/NavBar/navbar__buttomFotter.css);
 @import url(./blocks/Main/NavBar/navbar__Info.css);
@@ -76,7 +79,8 @@
 @import url(./blocks/Movies/SearchForm/searchForm__container-seach.css);
 @import url(./blocks/Movies/SearchForm/searchForm__info-text.css);
 @import url(./blocks/Movies/SearchForm/searchForm__position.css);
-@import url(./blocks/Movies/SearchForm/searchForm__button-save.css);
+@import url(./blocks/Movies/SearchForm/searchForm__button-save.css);;
+@import url(./blocks/Movies/SearchForm/searchForm__form-position.css);
 
 @import url(./blocks/Movies/still/still.css);
 
@@ -90,6 +94,7 @@
 @import url(./blocks/Register/register__singin.css);
 @import url(./blocks/Register/register__text-login.css);
 @import url(./blocks/Register/register__logo.css);
+@import url(./blocks/Register/register__position.css);
 
 @import url(./blocks/Login/login.css);
 @import url(./blocks/Login/login__fix.css);

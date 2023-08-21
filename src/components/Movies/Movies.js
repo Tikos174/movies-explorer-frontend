@@ -12,7 +12,6 @@ function Movies() {
         <MoviesCardList />
         <Still />
       </section>
-      <Footer />
     </>
   );
 }

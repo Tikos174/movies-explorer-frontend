@@ -8,6 +8,7 @@ import SavedMovies from './components/SavedMovies/SavedMovies'
 import Error from "./components/Error/Error";
 import Popup from "./components/popup/Popup";
 import Header from "./components/Header/header";
+import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
@@ -26,8 +27,9 @@ function App() {
   }
 
   return (
-    <main className="app">
+    <div className="app">
       < Header  onEditProfile={handleEditProfileClick}/>
+      <main className="main">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/movies" element={<Movies />} />
@@ -37,8 +39,10 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/error" element={<Error />} />
       </Routes>
+      </main>
+      <Footer />
       <Popup isOpen={isEditProfilePopupOpen} isClose={handle}/>
-    </main>
+    </div>
   );
 }
 

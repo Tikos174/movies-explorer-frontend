@@ -1,0 +1,9 @@
+.header__background{
+    width: 100%;
+    margin: auto;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

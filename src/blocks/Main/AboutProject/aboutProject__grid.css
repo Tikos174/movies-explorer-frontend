@@ -14,7 +14,7 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
     .aboutProject__grid{
         margin: 123px 20px 0px 17px;
         grid-template-columns: 2fr 4fr;

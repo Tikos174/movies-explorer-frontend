@@ -15,11 +15,11 @@
     transition: 0.5s
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
     .header__singup{
         display: none;
     }
-}
+} */
 
 @media screen and (max-width: 320px) {
     .header__singup{

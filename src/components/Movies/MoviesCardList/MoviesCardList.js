@@ -3,7 +3,6 @@ import Footer from "../../Footer/Footer";
 
 function MoviesCardList() {
   return (
-    <>
       <ul className="searchForm__film">
         <MoviesCard />
         <MoviesCard />
@@ -22,7 +21,6 @@ function MoviesCardList() {
         <MoviesCard />
         <MoviesCard />
       </ul>
-    </>
   );
 }
 

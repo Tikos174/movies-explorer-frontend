@@ -13,7 +13,7 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   .aboutProject__position {
     margin: 66px 35px 0 18px;
     flex-direction: row;

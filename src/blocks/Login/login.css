@@ -1,5 +1,5 @@
 .login {
-    margin: 65px 0 306px 0;
+  margin: 65px 0 306px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -10,9 +10,9 @@
 
 @media screen and (max-width: 320px) {
   .login {
-        display: flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 56px 0 161px 0;
+    margin: 57px 0 161px 0;
   }
 }

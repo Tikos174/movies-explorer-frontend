@@ -3,7 +3,7 @@ import logo from "../../images/logo_register.svg";
 function Register() {
   return (
     <section className="register">
-      <div className="">
+      <div className="register__position">
         <img className="register__logo" src={logo} alt="Movies Explorer" />
         <h2 className="register__title">Добро пожаловать!</h2>
       </div>
@@ -24,7 +24,7 @@ function Register() {
       <button className="register__link-login">Зарегистрироваться</button>
       <div className="register__bottom-box">
         <h2 className="register__text-login">Уже зарегистрированы?</h2>
-        <a href='' className="register__singin" >Войти</a>
+        <a href='/signin' className="register__singin" >Войти</a>
       </div>
     </section>
   );
