@@ -1,0 +1,10 @@
+.login__logo {
+  margin: 0;
+}
+
+@media screen and (max-width: 320px) {
+  .login__logo {
+    min-width: 38px;
+    min-height: 38px;
+  }
+}

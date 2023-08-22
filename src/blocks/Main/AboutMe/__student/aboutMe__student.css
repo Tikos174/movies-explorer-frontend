@@ -1,0 +1,22 @@
+.aboutMe__student {
+  margin: 113px 70px 0 70px;
+  padding-bottom: 27px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 17px;
+  padding-top: 5px;
+  border-bottom: 1px solid #dadada;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutMe__student {
+    margin: 91px 49px 0 51px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .aboutMe__student {
+    margin: 88px 15px 0 14px;
+    padding-bottom: 28px;
+  }
+}

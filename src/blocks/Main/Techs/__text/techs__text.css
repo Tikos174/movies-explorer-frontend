@@ -1,0 +1,22 @@
+.techs__text {
+  width: 90%;
+  margin: 105px 70px 0 70px;
+  padding-bottom: 23px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 17px;
+  border-bottom: 1px solid #dadada;
+}
+
+@media screen and (max-width: 768px) {
+  .techs__text {
+    margin: 92px 50px 0 51px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .techs__text {
+    margin: 85px 19px 0 17px;
+    padding-bottom: 28px;
+  }
+}

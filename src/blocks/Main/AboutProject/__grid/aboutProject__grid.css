@@ -1,0 +1,22 @@
+.aboutProject__grid{
+    margin: 155px 71px 10px 70px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 36px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutProject__grid{
+        margin: 171px 52px 10px 51px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .aboutProject__grid{
+        margin: 123px 20px 0px 17px;
+        grid-template-columns: 2fr 4fr;
+    }
+}

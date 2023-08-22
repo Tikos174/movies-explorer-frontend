@@ -1,0 +1,31 @@
+.techs__technologies-list {
+  display: flex;
+  gap: 11px;
+  margin-top: 107px;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 97px;
+}
+
+@media screen and (max-width: 768px) {
+  .techs__technologies-list {
+    gap: 5px;
+    margin-top: 82px;
+    margin-bottom: 87px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .techs__technologies-list {
+    max-height: 270px;
+    margin-top: 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 47px;
+  }
+}

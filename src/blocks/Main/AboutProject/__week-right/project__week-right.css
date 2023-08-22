@@ -1,0 +1,16 @@
+.project__week-right{
+    margin: 0;
+    padding: 9px 0 9px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #303030;
+}
+
+@media screen and (max-width: 441px) {
+    .project__week-right{
+        font-size: 9px;
+    }
+}

@@ -1,0 +1,14 @@
+.profil__singup{
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+    margin-bottom: 16px;
+}
