@@ -1,9 +1,8 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
-import Footer from "../../Footer/Footer";
 
 function MoviesCardList() {
   return (
-      <ul className="searchForm__film">
+      <ul className="moviesCardList">
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />

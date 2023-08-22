@@ -1,6 +1,7 @@
-import Header from "../Header/header";
-
 function Profile() {
+
+  
+
   return (
     <section className="profil">
       <h2 className="profil__info">Привет, Виталий!</h2>

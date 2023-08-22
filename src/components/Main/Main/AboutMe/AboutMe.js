@@ -17,7 +17,7 @@ function AboutMe() {
         </p>
         <a href='' className='aboutMe__githab'>Github</a>
         </div>
-          <img className='aboutMe__photo' src={photo}></img>
+          <img alt='Моя фотография' className='aboutMe__photo' src={photo}></img>
       </div>
     </section>
   );

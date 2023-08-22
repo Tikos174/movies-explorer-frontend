@@ -1,6 +1,3 @@
-import '../../../../blocks/Main/Promo/Promo.css'
-// import icom from '../../../../images/logo.svg'
-
 function Promo () {
     return (
         <section className="promo">

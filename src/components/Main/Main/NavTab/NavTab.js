@@ -1,6 +1,6 @@
 function Navtab() {
   return (
-      <nav className="navbar__buttomFotter">
+      <nav className="navbar">
         <a href="" className="navbar__Info">
           О проекте
         </a>

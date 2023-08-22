@@ -1,0 +1,19 @@
+.header__button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__button{
+        margin-right: 31px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .header__button{
+        margin-right: 15px;
+    }
+}
+

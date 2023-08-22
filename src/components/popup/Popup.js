@@ -6,8 +6,8 @@ function Popup({ isOpen, isClose }) {
         <h2 className="popup__text">Главная</h2>
         <a href='/movies' className="popup__textFilm">Фильмы</a>
         <a href='/saved-movies' className="popup__textSafeFilm">Сохраненные фильмы</a>
+              <a href='/profile' className="popup__accoutd"></a>
       </div>
-      <a href='/profile' className="popup__accoutd"></a>
     </div>
   );
 }

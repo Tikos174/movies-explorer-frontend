@@ -4,7 +4,7 @@ function Register() {
   return (
     <section className="register">
       <div className="register__position">
-        <img className="register__logo" src={logo} alt="Movies Explorer" />
+        <img alt='Логотип сайта' className="register__logo" src={logo} />
         <h2 className="register__title">Добро пожаловать!</h2>
       </div>
       <form className="register__form">

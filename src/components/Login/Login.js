@@ -4,7 +4,7 @@ function Login() {
   return (
     <section className="login">
       <div className="register__position">
-        <img className="login__logo" src={logo} alt="Movies Explorer" />
+        <img alt='Логотип сайта' className="login__logo" src={logo} />
         <h2 className="login__title">Рады видеть!</h2>
       </div>
       <form className="register__form">

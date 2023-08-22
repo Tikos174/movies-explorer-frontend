@@ -7,6 +7,7 @@ function Footer() {
     <>
       {pathname !== "/signup" &&
       pathname !== "/signin" &&
+      pathname !== "/profile" &&
       pathname !== "/error" ? (
         <footer className="footer">
           <h2 className="footer__title">

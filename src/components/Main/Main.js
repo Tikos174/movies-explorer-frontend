@@ -9,7 +9,7 @@ import Portfolio from "./Main/Portfolio/Portfolio";
 function Main() {
   return (
     <>
-      <div className="position-content">
+      <div className="main__positionContent">
         <Promo />
       </div>
       <Navtab />
