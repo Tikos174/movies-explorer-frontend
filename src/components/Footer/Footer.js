@@ -19,14 +19,14 @@ function Footer() {
               <a
                 target="_blank"
                 href="https://practicum.yandex.ru"
-                className="footer__githab"
+                className="footer__githab" rel="noreferrer"
               >
                 Яндекс.Практикум
               </a>
               <a
                 target="_blank"
                 href="https://github.com/Tikos174"
-                className="footer__githab"
+                className="footer__githab" rel="noreferrer"
               >
                 Github
               </a>

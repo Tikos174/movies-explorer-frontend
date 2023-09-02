@@ -82,6 +82,7 @@
 @import url(./blocks/Movies/MoviesCard/__button-save/moviesCard__button-save.css);
 @import url(./blocks/Movies/MoviesCard/__korometrazhkaButton/moviesCard__korometrazhkaButton.css);
 @import url(./blocks/Movies/MoviesCard/__buttonSaveCard/moviesCard__buttonSaveCard.css);
+@import url(./blocks/Movies/MoviesCard/__button-delete/moviesCard__button-delete.css);
 
 @import url(./blocks/Movies/Preloader/preloader.css);
 
@@ -137,3 +138,5 @@
 @import url(./blocks/popup/__textSafeFilm/popup__textSafeFilm.css);
 @import url(./blocks/popup/_display-open/popup_display-open.css);
 @import url(./blocks/popup/__accoutd/popup__accoutd.css);
+
+@import url(./blocks/preloader/preloader.css);

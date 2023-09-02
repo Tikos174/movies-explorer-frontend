@@ -19,10 +19,10 @@ label:after {
   content: '';
   position: absolute;
   top: 3px;
-  left: 3px;
+  left: 17px;
   width: 15px;
   height: 15px;
-  background: #4e4d4d;
+  background: #3DDC84;
   border-radius: 90px;
   transition: 0.3s;
 }
@@ -32,8 +32,8 @@ input:checked + label {
 }
 
 input:checked + label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-  background: #3DDC84;
+  right: calc(100% - 5px);
+  transform: translateX(-80%);
+  background: #4e4d4d; 
 
 }

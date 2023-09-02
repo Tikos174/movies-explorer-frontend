@@ -1,36 +1,71 @@
-import filmOne from "../../../images/3c64b5712a72bf92ff9d7cd3dc557431.jpeg";
+import React from "react";
+import { useLocation } from "react-router-dom";
 
-import { useEffect, useState, useLocation } from "react";
+function MoviesCard({
+  movie, safeMovies, transSafeMovie, transDeleteCardMovie
+}) {
+  const { pathname } = useLocation();
 
-function MoviesCard() {  
-  const [korometrazhkaButton, setkorometrazhkaButton] = useState(false);
+  const imageFilm = movie.image.url
+    ? `https://api.nomoreparties.co${movie.image.url}`
+    : movie.image;
 
-  const cardLikeButtonClassName = `moviesCard__button-save ${
-    korometrazhkaButton ? "moviesCard__korometrazhkaButton" : ""
-  }`;
+  function converterTime(mins) {
+    const hours = Math.floor(mins / 60);
+    const minutes = mins % 60;
 
-  function handleSafeFilm() {
-    if (cardLikeButtonClassName) {
-      setkorometrazhkaButton(true);
+    if (minutes > 0) {
+      return `${hours}ч${minutes}м`;
+    } else {
+      return `${hours}ч`;
     }
   }
+
+  const statusLike = safeMovies
+    ? safeMovies.some((i) => i.movieId === movie.id)
+    : false;
+
+  const cardLikeButtonClassName = `moviesCard__button-save ${
+    statusLike ? "moviesCard__korometrazhkaButton" : ""
+  }`;
+
+  function buttonLikeClick () {
+    transSafeMovie(movie);
+  };
+
+  function buttonDeleteClick  () {
+    transDeleteCardMovie(movie._id);
+  };
 
   return (
     <li className="moviesCard">
       <img
-        alt="Картика фильма"
+        alt={movie.nameRU}
         className="moviesCard__card-img"
-        src={filmOne}
+        src={imageFilm}
       ></img>
       <div className="moviesCard__position">
         <div className="moviesCard__info-text">
-          <h2 className="moviesCard__card-text">!!!!!!</h2>
-          <p className="moviesCard__card-time">&&&&&&&</p>
+          <h2 className="moviesCard__card-text">{movie.nameRU}</h2>
+          <p className="moviesCard__card-time">
+            {converterTime(movie.duration)}
+          </p>
         </div>
-        <button
-          onClick={handleSafeFilm}
-          className={cardLikeButtonClassName}
-        ></button>
+        {pathname === "/movies" && (
+          <button
+            onClick={buttonLikeClick}
+            type="button"
+            className={cardLikeButtonClassName}
+            alt="Сохранить фильм"
+          />
+        )}
+        {pathname === "/saved-movies" && (
+          <button
+            onClick={buttonDeleteClick}
+            type="button"
+            className="moviesCard__button-delete"
+          />
+        )}
       </div>
     </li>
   );

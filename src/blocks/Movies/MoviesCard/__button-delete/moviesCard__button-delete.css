@@ -1,0 +1,10 @@
+.moviesCard__button-delete{
+    background-image: url('../../../../images/d8.svg');
+    margin: 0px 13px 32px 0px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: none;
+    background-size: 23px;
+    cursor: pointer;
+}

@@ -5,7 +5,7 @@ function Portfolio() {
       <a
         href="https://tikos174.github.io/how-to-learn/"
         className="portfolio__link"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         <div className="portfolio__block">
           <h2 className="portfolio__text">Статичный сайт</h2>
@@ -15,7 +15,7 @@ function Portfolio() {
       <a
         href="https://tikos174.github.io/russian-travel/"
         className="portfolio__link"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         <div className="portfolio__block">
           <h2 className="portfolio__text">Адаптивный сайт</h2>
@@ -25,7 +25,7 @@ function Portfolio() {
       <a
         href="https://tikos174.github.io/mesto/"
         className="portfolio__link"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         <div className="portfolio__block">
           <h2 className="portfolio__text">Одностраничное приложение</h2>

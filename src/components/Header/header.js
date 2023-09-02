@@ -1,41 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useLocation } from "react-router-dom";
 
-function Header(props) {
+function Header({onEditProfile, loggedIn}) {
   const [loggenIn, setLoggenIn] = React.useState(false);
   const [loggenInImage, setLoggenInImage] = React.useState(false);
-
+  
+  
   const { pathname } = useLocation();
 
   useEffect(() => {
     if (pathname === "/") {
       setLoggenInImage(true);
     }
-  }, [pathname]);
+  }, []);
 
   useEffect(() => {
     if (pathname === "/movies") {
       setLoggenIn(true);
+      setLoggenInImage(false);
     }
-  }, [pathname]);
+  }, []);
 
   useEffect(() => {
     if (pathname === "/saved-movies") {
       setLoggenIn(true);
+      setLoggenInImage(false);
     }
-  }, [pathname]);
+  }, []);
 
   useEffect(() => {
     if (pathname === "/profile") {
       setLoggenIn(true);
+      setLoggenInImage(false);
     }
-  }, [pathname]);
+  }, []);
 
   return (
     <>
-      {pathname !== "/signup" &&
-      pathname !== "/signin" &&
-      pathname !== "/error" ? (
         <header
           className={`header ${
             loggenInImage ? "header__positionActivProfil" : ""
@@ -46,14 +47,14 @@ function Header(props) {
               <a href="/" className="header__icon"></a>
               <a
                 href="/movies"
-                className={`header__linkfilm ${loggenIn ? "window-open" : ""}`}
+                className={`header__linkfilm ${loggedIn ? "window-open" : ""}`}
               >
                 Фильмы
               </a>
               <a
                 href="/saved-movies"
                 className={`header__linkSaveFilm ${
-                  loggenIn ? "window-open" : ""
+                  loggedIn ? "window-open" : ""
                 }`}
               >
                 Сохранённые фильмы
@@ -62,33 +63,32 @@ function Header(props) {
             <div className="header__button">
               <a
                 href="/signup"
-                className={`header__singup ${loggenIn ? "window-hidden" : ""}`}
+                className={`header__singup ${loggedIn ? "window-hidden" : ""}`}
               >
                 Регистрация
               </a>
               <a
                 href="/signin"
-                className={`header__singin ${loggenIn ? "window-hidden" : ""}`}
+                className={`header__singin ${loggedIn ? "window-hidden" : ""}`}
               >
                 Войти
               </a>
               <button
-                onClick={props.onEditProfile}
+                onClick={onEditProfile}
                 className={`header__buttonpopUp ${
                   loggenInImage ? "window-hidden" : ""
                 }`}
               ></button>
               <a
-                href=""
+                href="/profile"
                 className={`header__iconAccount ${
-                  loggenIn ? "window-open" : ""
+                  loggedIn ? "window-open" : ""
                 }`}
               ></a>
             </div>
           </div>
         </header>
-      ) : null}
-    </>
+        </>
   );
 }
 

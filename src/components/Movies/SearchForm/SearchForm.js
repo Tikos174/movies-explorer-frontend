@@ -1,14 +1,42 @@
-import Preloader from "../Preloader/Preloader";
+import React from "react";
 
-function SearchForm() {
+function SearchForm({
+  procesFilter,
+  сhec,
+  switching,
+  handleInput,
+  inputValueFilter,
+}) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    procesFilter(inputValueFilter, сhec);
+  };
+
   return (
     <div className="searchForm__form-position">
-      <form className="searchForm__form">
+      <form className="searchForm__form" onSubmit={handleSubmit}>
         <div className="searchForm__container-seach">
-          <input placeholder="Фильм" className="searchForm__inputBox"></input>
-          <button className="searchForm__button"></button>
+          <input
+            className="searchForm__inputBox"
+            type="text"
+            placeholder="Фильм"
+            name="search"
+            value={inputValueFilter || "" }
+            onChange={handleInput}
+            id="search"
+          ></input>
+          <button className="searchForm__button" type="submit"></button>
         </div>
-        <Preloader />
+        <div className="searchForm__short-films">
+          <input
+            type="checkbox"
+            id="switch"
+            switching={switching}
+            сhec={сhec || ''}
+          />
+          <label for="switch"></label>
+          <h2 className="searchForm__switch-block">Короткометражки</h2>
+        </div>
       </form>
     </div>
   );

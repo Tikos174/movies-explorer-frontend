@@ -1,25 +1,27 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList() {
+function MoviesCardList({
+  movies,
+  transSafeMovie,
+  safeMovies,
+  transDeleteCardMovie,
+}) {
   return (
+    <section className="moviesCardList">
       <ul className="moviesCardList">
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
+        {movies.map((card) => {
+          return (
+            <MoviesCard
+            transSafeMovie={transSafeMovie}
+            safeMovies={safeMovies}
+            transDeleteCardMovie={transDeleteCardMovie}
+            movie={card}
+            key={card.id || card.movieId}
+            />
+          );
+        })}
       </ul>
+    </section>
   );
 }
 
