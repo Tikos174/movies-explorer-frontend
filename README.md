@@ -4,3 +4,5 @@ https://www.figma.com/file/NUILyY0uwcL3mtgCYlxLH6/Diploma-(Copy)?type=design&nod
 Frontend https://movie.resource.nomoredomains.sbs/
 
 Backend https://api.movie.resource.nomoredomains.sbs/
+
+Ссылка на пул реквест https://github.com/Tikos174/movies-explorer-frontend/pull/2#issuecomment-1704367742
