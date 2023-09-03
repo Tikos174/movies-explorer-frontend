@@ -1,25 +1,29 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import logo from "../../images/logo_register.svg";
+import { useForm } from "../../utils/useForm";
 
-function Register({handeRegister}) {
-  const [formValue, setFormValue] = React.useState({
+function Register({ handeRegister, loggedIn }) {
+  const navigate = useNavigate();
+  const { formValue, handleChange, isValid } = useForm({
+    name: "",
     email: "",
     password: "",
-    name: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValue({
-      ...formValue,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    handeRegister(formValue);
-  };
+    if (isValid) {
+      handeRegister({
+        name: formValue.name,
+        email: formValue.email,
+        password: formValue.password,
+      });
+    }
+    if (loggedIn) {
+      navigate("/movies");
+    }
+  }
 
   return (
     <section className="register">
@@ -36,15 +40,22 @@ function Register({handeRegister}) {
           onChange={handleChange}
           type="name"
           name="name"
+          minLength="3"
+          maxLength="40"
+          required
         />
         <p className="register__name">E-mail</p>
         <input
+        lassName="register__input-name"
           input
           placeholder="Email"
           value={formValue.email}
           onChange={handleChange}
           type="email"
           name="email"
+          minLength="3"
+          maxLength="40"
+          required
         />
         <p className="register__name">Пароль</p>
         <input
@@ -57,8 +68,10 @@ function Register({handeRegister}) {
           autoComplete="on"
           className="register__input-name"
         />
-        <button className="register__link-login" type="submit">
-          Зарегистрироваться
+        <button
+          className={`register__link-login ${!isValid ? "register__button-disable" : ""}`}
+          disabled={!isValid} >
+          Войти
         </button>
       </form>
 

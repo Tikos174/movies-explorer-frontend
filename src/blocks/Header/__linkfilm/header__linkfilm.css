@@ -6,6 +6,7 @@
     font-size: 12px;
     line-height: 17px;
     opacity: 0;
+    display: none;
 }
 
 .header__linkfilm:hover{

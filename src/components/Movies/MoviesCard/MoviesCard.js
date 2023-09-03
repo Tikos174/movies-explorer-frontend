@@ -21,6 +21,10 @@ function MoviesCard({
     }
   }
 
+  const likeIdMovie = safeMovies
+    ? safeMovies.find((item) => item.movieId === movie.id)
+    : '';
+
   const statusLike = safeMovies
     ? safeMovies.some((i) => i.movieId === movie.id)
     : false;
@@ -30,7 +34,7 @@ function MoviesCard({
   }`;
 
   function buttonLikeClick () {
-    transSafeMovie(movie);
+    transSafeMovie(movie, statusLike, likeIdMovie?._id);
   };
 
   function buttonDeleteClick  () {

@@ -6,6 +6,7 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
   const [сhec, setChec] = React.useState(false);
   const [inputText, setInputText] = React.useState("");
   const [filteredMovies, setFilteredMovies] = React.useState([]);
+  const [notSeacthFilm, setnotSeacthFilm] = React.useState(false);
 
   const handleSearchChange = (e) => {
     e.preventDefault();
@@ -13,23 +14,21 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
   };
 
   const handleChebox = () => {
-    if (inputText !== "") {
       setChec(!сhec);
       handleFilterMovies(inputText, !сhec);
-    }
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleFilterMovies = React.useCallback((inputValueFilter, Done) => {
+  const handleFilterMovies = React.useCallback((inputValueFilter, done) => {
     localStorage.setItem("inputValueFavorite", JSON.stringify(inputValueFilter));
     localStorage.setItem(
       "checkboxStateFavorite",
-      JSON.stringify(Done)
+      JSON.stringify(done)
     );
 
     let newFilteredData = [];
 
-    if (Done) {
+    if (done) {
       newFilteredData = safeMovies.filter((movie) => {
         return (
           (movie.nameRU.toLowerCase().includes(inputValueFilter.toLowerCase()) ||
@@ -42,7 +41,7 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
         "localStorageSafeMovie",
         JSON.stringify(newFilteredData)
       );
-    } else if (!Done) {
+    } else if (!done) {
       newFilteredData = safeMovies.filter((movie) => {
         return (
           movie.nameRU.toLowerCase().includes(inputValueFilter.toLowerCase()) ||
@@ -54,6 +53,10 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
         "localStorageSafeMovie",
         JSON.stringify(newFilteredData)
       );
+    }
+
+    if (newFilteredData.length === 0) {
+      setnotSeacthFilm(true);
     }
   });
 
@@ -72,7 +75,8 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
       setInputText(JSON.parse(localInputValue));
       handleFilterMovies(JSON.parse(localInputValue), JSON.parse(localCheckbox));
     }
-  }, [searchedMovies, localCheckbox, localInputValue, handleFilterMovies]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   React.useEffect(() => {
     if (searchedMovies) {
@@ -90,10 +94,15 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
         inputValueFilter={inputText}
         procesFilter={handleFilterMovies}
       />
+      {
+     notSeacthFilm ? (
+        <p className="Movie__notMovie">Ничего не найдено</p>
+      ) : (
         <MoviesCardList
           movies={filteredMovies}
           transDeleteCardMovie={transDeleteCardMovie}
         />
+      )}
     </>
   );
 }

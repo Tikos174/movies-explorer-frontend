@@ -5,7 +5,7 @@
 
 @import url(./blocks/Main/main.css);
 @import url(./blocks/Main/__positionContent/main__positionContent.css);
-
+@import url(./blocks/Register/__button-disable/register__button-disable.css);
 @import url(./blocks/Header/__positionActivProfil/header__positionActivProfil.css);
 @import url(./blocks/Header/header.css);
 @import url(./blocks/Header/__background/header__background.css);
@@ -100,6 +100,7 @@
 @import url(./blocks/Register/__logo/register__logo.css);
 @import url(./blocks/Register/__position/register__position.css);
 
+
 @import url(./blocks/Login/login.css);
 @import url(./blocks/Login/__fix/login__fix.css);
 @import url(./blocks/Login/__logo/login__logo.css);
@@ -140,3 +141,4 @@
 @import url(./blocks/popup/__accoutd/popup__accoutd.css);
 
 @import url(./blocks/preloader/preloader.css);
+@import url(./blocks/Movies/Movie__notMovie.css)

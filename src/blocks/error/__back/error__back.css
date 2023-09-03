@@ -6,6 +6,7 @@
     color: #4285F4;
     margin: 167px 0 204px 0;
     text-decoration: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 320px) {

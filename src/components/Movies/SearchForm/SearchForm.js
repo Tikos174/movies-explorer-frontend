@@ -21,7 +21,7 @@ function SearchForm({
             type="text"
             placeholder="Фильм"
             name="search"
-            value={inputValueFilter || "" }
+            value={inputValueFilter || ""}
             onChange={handleInput}
             id="search"
           ></input>
@@ -31,10 +31,10 @@ function SearchForm({
           <input
             type="checkbox"
             id="switch"
-            switching={switching}
-            сhec={сhec || ''}
+            onChange={switching}
+            сhec={сhec}
           />
-          <label for="switch"></label>
+          <label htmlFor="switch"></label>
           <h2 className="searchForm__switch-block">Короткометражки</h2>
         </div>
       </form>

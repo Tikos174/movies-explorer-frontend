@@ -11,6 +11,7 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [сhec, setChec] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [notSeacthFilm, setnotSeacthFilm] = React.useState(false);
 
   const handleResize = React.useCallback(() => {
     setScreenWidth(window.innerWidth);
@@ -38,29 +39,30 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
     }
   };
 
-
+  //
   const handleSearchChange = (e) => {
     e.preventDefault();
     setInputText(e.target.value);
   };
 
+  //
   const handleChebox = () => {
-    if (inputText !== "") {
       setChec(!сhec);
       handleFilterMovies(inputText, !сhec);
-    }
   };
 
-  const handleFilterMovies = (inputValueFilter, Done) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleFilterMovies = (inputValueFilter, done) => {
     localStorage.setItem("inputValue", JSON.stringify(inputValueFilter));
-    localStorage.setItem("switchСheck", JSON.stringify(Done));
+    localStorage.setItem("switchСheck", JSON.stringify(done));
 
+    setnotSeacthFilm(false);
     setIsLoading(true);
 
     setTimeout(() => {
       let newFilteredData = [];
 
-      if (Done) {
+      if (done) {
         newFilteredData = movies.filter((movie) => {
           return (
             (movie.nameRU
@@ -69,28 +71,68 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
               movie.nameEN
                 .toLowerCase()
                 .includes(inputValueFilter.toLowerCase())) &&
-            movie.duration <= 1280
+            movie.duration <= 40
           );
         });
         setFilteredMovies(newFilteredData);
-        localStorage.setItem("searchedMovies", JSON.stringify(newFilteredData));
+        localStorage.setItem(
+          "localStorageSafeMovie",
+          JSON.stringify(newFilteredData)
+        );
+      } else if (!done) {
+        newFilteredData = movies.filter((movie) => {
+          return (
+            movie.nameRU
+              .toLowerCase()
+              .includes(inputValueFilter.toLowerCase()) ||
+            movie.nameEN.toLowerCase().includes(inputValueFilter.toLowerCase())
+          );
+        });
+        setFilteredMovies(newFilteredData);
+        localStorage.setItem(
+          '"localStorageSafeMovie"',
+          JSON.stringify(newFilteredData)
+        );
+      }
+
+      if (newFilteredData.length === 0) {
+        setnotSeacthFilm(true);
       }
 
       setIsLoading(false);
     }, 2000);
   };
 
+  const searchedMovies = localStorage.getItem("localStorageSafeMovie");
+  const localInputValue = localStorage.getItem("inputValueFavorite");
+  const localCheckbox = localStorage.getItem("checkboxStateFavorite");
+
+  React.useEffect(() => {
+    if (searchedMovies) {
+      setFilteredMovies(JSON.parse(searchedMovies));
+    }
+    if (localCheckbox) {
+      setChec(JSON.parse(localCheckbox));
+    }
+    if (localInputValue) {
+      setInputText(JSON.parse(localInputValue));
+    }
+  }, [localCheckbox, localInputValue, searchedMovies]);
+
   return (
     <section className="searchForm">
       <SearchForm
         procesFilter={handleFilterMovies}
         switching={handleChebox}
-        сhec={!сhec}
+        сhec={сhec}
         handleInput={handleSearchChange}
         inputValueFilter={inputText}
       />
-      {isLoading ? (
+      {
+      isLoading ? (
         <Preloader />
+      ) : notSeacthFilm ? (
+        <p className="Movie__notMovie">Ничего не найдено</p>
       ) : (
         <MoviesCardList
           movies={renderCardsMovies}
@@ -98,9 +140,9 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
           transSafeMovie={transSafeMovie}
         />
       )}
-        <button onClick={handleAddContent} className="still" type="button">
-          Ещё
-        </button>
+      <button onClick={handleAddContent} className="still" type="button">
+        Ещё
+      </button>
     </section>
   );
 }

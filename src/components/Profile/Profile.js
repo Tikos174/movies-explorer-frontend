@@ -1,9 +1,5 @@
-import React, { useContext } from "react";
-import { CurrentUserContext } from "../../utils/CurrentUserContext";
-
-function Profile({signOut, buttonSafeProfil}) {
-
-  const currentUser = useContext(CurrentUserContext);
+import React from "react";
+function Profile({signOut, buttonSafeProfil, userData}) {
   
   const [formValue, setFormValue] = React.useState({
     email: "",
@@ -26,7 +22,7 @@ function Profile({signOut, buttonSafeProfil}) {
   return (
     <section className="profil">
       <h2 className="profil__info">
-      Привет, {}!
+      Привет, {userData.name}!
       </h2>
       <form className="profil__form" onSubmit={handleSubmit}>
         <div className="profil__input">
@@ -36,7 +32,7 @@ function Profile({signOut, buttonSafeProfil}) {
             type="text"
             placeholder="Имя"
             required
-            value={formValue.name}
+            value={formValue.name || userData.name}
             onChange={handleChange}
             className="profil__input-name"
           />
@@ -48,7 +44,7 @@ function Profile({signOut, buttonSafeProfil}) {
             type="email"
             placeholder="E-mail"
             required
-            value={formValue.email}
+            value={formValue.email || userData.email}
             onChange={handleChange}
             className="profil__input-name"
           />

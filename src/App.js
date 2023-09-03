@@ -27,6 +27,7 @@ function App() {
   const [movies, setMovies] = React.useState([]);
   const [safeMovies, setSafeMovies] = React.useState([]);
 
+  const [userData, setUserData] = React.useState('');
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
     React.useState(false);
 
@@ -50,13 +51,14 @@ function App() {
           console.log(err);
         });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handeRegister (formValue) {
     registerPost(formValue)
       .then(() => {
-        handeLogin();
-        navigate("/movies");
+        handeLogin(formValue);
+        navigate("/signin");
       })
       .catch((err) => {
         console.log(err);
@@ -80,6 +82,7 @@ function App() {
         getUserInfo()
         .then((data) => {
           setCurrentUser(data);
+          setUserData(data.user)
         })
         .catch((err) => {
           console.log(err);
@@ -118,7 +121,10 @@ function App() {
       });
   };
 
-  function handeSafeMovie (movie) {
+  function handeSafeMovie (movie, statusLike, id) {
+    if (statusLike) {
+      transDeleteSaveMovie(id);
+    } else {
       localStorageSaveMovie(movie)
         .then((data) => {
           setSafeMovies([...safeMovies, data]);
@@ -126,7 +132,9 @@ function App() {
         .catch((err) => {
           console.log(err);
         });
+      }
   };
+  
 
   function transDeleteSaveMovie (id)  {
     deleteSaveMovie(id)
@@ -145,6 +153,7 @@ function App() {
     if (localSafeMovies) {
       setSafeMovies(JSON.parse(localSafeMovies));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSignOut = () => {
@@ -176,7 +185,7 @@ function App() {
                 path="/signup"
                 element={
                   <Register
-                    handeRegister={handeRegister}
+                    handeRegister={handeRegister} loggedIn={!loggedIn}
                   />
                 }
               />
@@ -220,6 +229,7 @@ function App() {
                   buttonSafeProfil={handleUpdateName}
                   transUpdateName={handleUpdateName}
                   loggedIn={loggedIn}
+                  userData={userData}
                   />
                 }
               />

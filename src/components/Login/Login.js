@@ -1,24 +1,19 @@
 import logo from "../../images/logo_register.svg";
 import React from "react";
+import { useForm } from "../../utils/useForm";
 
-function Login({handeLogin}) {
-  const [formValue, setFormValue] = React.useState({
+function Login({ handeLogin }) {
+  const { formValue, handleChange, isValid } = useForm({
     email: "",
     password: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValue({
-      ...formValue,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    handeLogin(formValue);
-  };
+    if (isValid) {
+      handeLogin({ email: formValue.email, password: formValue.password });
+    }
+  }
 
   return (
     <section className="login">
@@ -35,20 +30,28 @@ function Login({handeLogin}) {
           value={formValue.email}
           onChange={handleChange}
           className="register__input-name"
+          minLength="3"
+          maxLength="40"
+          required
         />
         <p className="register__name">Пароль</p>
         <input
           placeholder="Пароль"
           type="password"
           name="password"
-          autoComplete="on"
+          minLength="3"
+          maxLength="40"
+          required
           className="register__input-name"
-          value={formValue.password}
+          value={formValue.password || ""}
           onChange={handleChange}
         />
-        <button className="register__link-login login__fix">Войти</button>
+        <button
+          className={`login__fix ${!isValid ? "register__button-disable" : ""}`}
+          disabled={!isValid} >
+          Войти
+        </button>
       </form>
-
       <div className="register__bottom-box">
         <h2 className="register__text-login">Ещё не зарегистрированы?</h2>
         <a href="/signup" className="register__singin">
