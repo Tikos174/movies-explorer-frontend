@@ -7,6 +7,7 @@ function SearchForm({
   handleInput,
   inputValueFilter,
 }) {
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     procesFilter(inputValueFilter, сhec);
@@ -32,7 +33,7 @@ function SearchForm({
             type="checkbox"
             id="switch"
             onChange={switching}
-            сhec={сhec}
+            checked={сhec || ''}
           />
           <label htmlFor="switch"></label>
           <h2 className="searchForm__switch-block">Короткометражки</h2>

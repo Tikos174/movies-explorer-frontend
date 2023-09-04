@@ -15,7 +15,13 @@ import Footer from "./components/Footer/Footer";
 import Popup from "./components/popup/Popup";
 
 import { registerPost, authorizationPost, checkToken } from "./utils/auth";
-import { getUserInfo, updateUserInfo, getSavedMovies, localStorageSaveMovie, deleteSaveMovie } from "./utils/mainApi";
+import {
+  getUserInfo,
+  updateUserInfo,
+  getSavedMovies,
+  localStorageSaveMovie,
+  deleteSaveMovie,
+} from "./utils/mainApi";
 import { getAllCards } from "./utils/MoviesApi";
 
 function App() {
@@ -26,8 +32,7 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [movies, setMovies] = React.useState([]);
   const [safeMovies, setSafeMovies] = React.useState([]);
-
-  const [userData, setUserData] = React.useState('');
+  const [userData, setUserData] = React.useState("");
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
     React.useState(false);
 
@@ -51,10 +56,10 @@ function App() {
           console.log(err);
         });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function handeRegister (formValue) {
+  function handeRegister(formValue) {
     registerPost(formValue)
       .then(() => {
         handeLogin(formValue);
@@ -63,9 +68,9 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }
 
-  function handeLogin (values) {
+  function handeLogin(values) {
     authorizationPost(values.email, values.password)
       .then((data) => {
         if (data.token) {
@@ -76,52 +81,38 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }
 
   React.useEffect(() => {
-        getUserInfo()
-        .then((data) => {
+    loggedIn &&
+      Promise.all([getUserInfo(), getAllCards(), getSavedMovies()])
+        .then(([data, dataMovie, dataSaveMovie]) => {
           setCurrentUser(data);
-          setUserData(data.user)
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }, []);
-
-  React.useEffect(() => {
-        getAllCards()
-        .then((dataMovie) => {;
+          setUserData(data.user);
           setMovies(dataMovie);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }, []);
-
-
-  React.useEffect(() => {
-        getSavedMovies()
-        .then((dataSaveMovie) => {
           setSafeMovies(dataSaveMovie);
-          localStorage.setItem('localStorageSaveMovie', JSON.stringify(dataSaveMovie));
+          localStorage.setItem(
+            "localStorageSaveMovie",
+            JSON.stringify(dataSaveMovie)
+          );
         })
         .catch((err) => {
           console.log(err);
         });
-  }, []);
+  }, [loggedIn]);
 
-  function handleUpdateName (data) {
+  function handleUpdateName(data) {
     updateUserInfo(data)
       .then((data) => {
         setCurrentUser(data);
+        alert("готово");
       })
       .catch((err) => {
         console.log(err);
       });
-  };
+  }
 
-  function handeSafeMovie (movie, statusLike, id) {
+  function handeSafeMovie(movie, statusLike, id) {
     if (statusLike) {
       transDeleteSaveMovie(id);
     } else {
@@ -132,39 +123,53 @@ function App() {
         .catch((err) => {
           console.log(err);
         });
-      }
-  };
-  
+    }
+  }
 
-  function transDeleteSaveMovie (id)  {
+  function transDeleteSaveMovie(id) {
     deleteSaveMovie(id)
       .then(() => {
         setSafeMovies(safeMovies.filter((m) => m._id !== id));
+        nandleDeleteLocalCard();
       })
       .catch((err) => {
         console.log(err);
       });
+  }
 
+  const nandleDeleteLocalCard = (id) => {
+    const deleteSafeCardMovie = JSON.parse(
+      localStorage.getItem("localStorageSafeMovieFavorite")
+    );
+    if (deleteSafeCardMovie) {
+      const newDeleteSafeCardMovie = deleteSafeCardMovie.filter(
+        (movie) => movie._id !== id
+      );
+
+      localStorage.setItem(
+        "localStorageSafeMovieFavorite",
+        JSON.stringify(newDeleteSafeCardMovie)
+      );
+    }
   };
 
-  const localSafeMovies = localStorage.getItem('localStorageSaveMovie');
+  const localSafeMovies = localStorage.getItem("localStorageSaveMovie");
 
   React.useEffect(() => {
     if (localSafeMovies) {
       setSafeMovies(JSON.parse(localSafeMovies));
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [localSafeMovies]);
 
   const handleSignOut = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('localStorageSaveMovie');
-    localStorage.removeItem('inputValue');
-    localStorage.removeItem('switchСheck');
-    localStorage.removeItem('searchedMovies');
-    localStorage.removeItem('inputValueFavorite');
-    localStorage.removeItem('checkboxStateFavorite');
-    navigate('/', { replace: true });
+    localStorage.removeItem("token");
+    localStorage.removeItem("searchedMovies");
+    localStorage.removeItem("inputValue");
+    localStorage.removeItem("checkboxState");
+    localStorage.removeItem("localStorageSafeMovieFavorite");
+    localStorage.removeItem("inputValueFavorite");
+    localStorage.removeItem("checkboxStateFavorite");
+    navigate("/", { replace: true });
     setLoggedIn(false);
   };
 
@@ -172,12 +177,14 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="app">
         <main className="main">
-          {
-          pathname === "/" ||
+          {pathname === "/" ||
           pathname === "/movies" ||
           pathname === "/saved-movies" ||
           pathname === "/profile" ? (
-            <Header onEditProfile={handleEditProfileClick} loggedIn={loggedIn}/>
+            <Header
+              onEditProfile={handleEditProfileClick}
+              loggedIn={loggedIn}
+            />
           ) : null}
           <main className="main">
             <Routes>
@@ -185,27 +192,24 @@ function App() {
                 path="/signup"
                 element={
                   <Register
-                    handeRegister={handeRegister} loggedIn={!loggedIn}
+                    handeRegister={handeRegister}
+                    loggedIn={!loggedIn}
                   />
                 }
               />
               <Route
                 path="/signin"
-                element={
-                  <Login
-                    handeLogin={handeLogin}
-                  />
-                }
+                element={<Login handeLogin={handeLogin} loggedIn={loggedIn} />}
               />
               <Route
                 path="/movies"
                 element={
                   <ProtectedRoute
-                  element={Movies}
-                  loggedIn={loggedIn}
-                  movies={movies}
-                  safeMovies={safeMovies}
-                  transSafeMovie={handeSafeMovie}
+                    element={Movies}
+                    loggedIn={loggedIn}
+                    movies={movies}
+                    safeMovies={safeMovies}
+                    transSafeMovie={handeSafeMovie}
                   />
                 }
               />
@@ -213,10 +217,10 @@ function App() {
                 path="/saved-movies"
                 element={
                   <ProtectedRoute
-                  element={SavedMovies}
-                  loggedIn={loggedIn}
-                  transDeleteCardMovie={transDeleteSaveMovie}
-                  safeMovies={safeMovies}
+                    element={SavedMovies}
+                    loggedIn={loggedIn}
+                    transDeleteCardMovie={transDeleteSaveMovie}
+                    safeMovies={safeMovies}
                   />
                 }
               />
@@ -224,12 +228,12 @@ function App() {
                 path="/profile"
                 element={
                   <ProtectedRoute
-                  element={Profile}
-                  signOut={handleSignOut}
-                  buttonSafeProfil={handleUpdateName}
-                  transUpdateName={handleUpdateName}
-                  loggedIn={loggedIn}
-                  userData={userData}
+                    element={Profile}
+                    signOut={handleSignOut}
+                    buttonSafeProfil={handleUpdateName}
+                    transUpdateName={handleUpdateName}
+                    loggedIn={loggedIn}
+                    userData={userData}
                   />
                 }
               />
@@ -237,7 +241,12 @@ function App() {
               <Route path="*" element={<Error loggedIn={loggedIn} />} />
             </Routes>
           </main>
+          {pathname === "/" ||
+          pathname === "/movies" ||
+          pathname === "/saved-movies" ||
+          pathname === "/profile"  ? (
             <Footer />
+          ) : null}
         </main>
         <Popup isOpen={isEditProfilePopupOpen} isClose={handle} />
       </div>

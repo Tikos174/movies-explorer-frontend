@@ -1,29 +1,33 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 import logo from "../../images/logo_register.svg";
-import { useForm } from "../../utils/useForm";
+import  { useForm }  from "../../utils/useForm";
 
 function Register({ handeRegister, loggedIn }) {
   const navigate = useNavigate();
-  const { formValue, handleChange, isValid } = useForm({
-    name: "",
-    email: "",
-    password: "",
+  const { formValue, handleChange, errors, isValid } = useForm({
+    name: '',
+    email: '',
+    password: '',
   });
 
   function handleSubmit(e) {
     e.preventDefault();
     if (isValid) {
       handeRegister({
-        name: formValue.name,
-        email: formValue.email,
-        password: formValue.password,
+        name: formValue.name, email: formValue.email, password: formValue.password 
       });
     }
     if (loggedIn) {
       navigate("/movies");
     }
   }
+
+  React.useEffect(() => {
+    if (!loggedIn) {
+      navigate('/movies');
+    }
+  }, [loggedIn, navigate]);
 
   return (
     <section className="register">
@@ -36,7 +40,7 @@ function Register({ handeRegister, loggedIn }) {
         <input
           placeholder="Имя"
           className="register__input-name"
-          value={formValue.name}
+          value={formValue.name || ''}
           onChange={handleChange}
           type="name"
           name="name"
@@ -44,12 +48,13 @@ function Register({ handeRegister, loggedIn }) {
           maxLength="40"
           required
         />
+        <span className="register__error">{errors.name}</span>
         <p className="register__name">E-mail</p>
         <input
-        lassName="register__input-name"
+        className="register__input-name"
           input
           placeholder="Email"
-          value={formValue.email}
+          value={formValue.email || ''}
           onChange={handleChange}
           type="email"
           name="email"
@@ -57,21 +62,26 @@ function Register({ handeRegister, loggedIn }) {
           maxLength="40"
           required
         />
+        <span className="register__error">{errors.email}</span>
         <p className="register__name">Пароль</p>
         <input
           input
           placeholder="Пароль"
-          value={formValue.password}
+          value={formValue.password || ''}
           onChange={handleChange}
           type="password"
           name="password"
-          autoComplete="on"
-          className="register__input-name"
+          autocomplete="on"
+          className="register__input-name"            
+          minLength="6"
+          maxLength="20"
+          required
         />
+        <span className="register__error">{errors.password}</span>
         <button
           className={`register__link-login ${!isValid ? "register__button-disable" : ""}`}
           disabled={!isValid} >
-          Войти
+          Зарегистрироваться
         </button>
       </form>
 

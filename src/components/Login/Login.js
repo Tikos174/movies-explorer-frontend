@@ -1,9 +1,11 @@
 import logo from "../../images/logo_register.svg";
 import React from "react";
 import { useForm } from "../../utils/useForm";
+import { useNavigate } from 'react-router-dom';
 
-function Login({ handeLogin }) {
-  const { formValue, handleChange, isValid } = useForm({
+function Login({ handeLogin, loggedIn }) {
+  const navigate = useNavigate();
+  const { formValue, handleChange, errors, isValid } = useForm({
     email: "",
     password: "",
   });
@@ -14,6 +16,12 @@ function Login({ handeLogin }) {
       handeLogin({ email: formValue.email, password: formValue.password });
     }
   }
+
+  React.useEffect(() => {
+    if (loggedIn) {
+      navigate('/movies');
+    }
+  }, [loggedIn, navigate]);
 
   return (
     <section className="login">
@@ -34,6 +42,7 @@ function Login({ handeLogin }) {
           maxLength="40"
           required
         />
+        <span className="register__error">{errors.email}</span>
         <p className="register__name">Пароль</p>
         <input
           placeholder="Пароль"
@@ -41,11 +50,13 @@ function Login({ handeLogin }) {
           name="password"
           minLength="3"
           maxLength="40"
+          autocomplete="on"
           required
           className="register__input-name"
           value={formValue.password || ""}
           onChange={handleChange}
         />
+        <span className="register__error">{errors.password}</span>
         <button
           className={`login__fix ${!isValid ? "register__button-disable" : ""}`}
           disabled={!isValid} >

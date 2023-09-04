@@ -88,6 +88,7 @@
 
 @import url(./blocks/Movies/still/still.css);
 
+@import url(./blocks/Register/__button-disable/register__button-disable.css);
 @import url(./blocks/Register/register.css);
 @import url(./blocks/Register/__title/register__title.css);
 @import url(./blocks/Register/__form/register__form.css);
@@ -99,6 +100,7 @@
 @import url(./blocks/Register/__text-login/register__text-login.css);
 @import url(./blocks/Register/__logo/register__logo.css);
 @import url(./blocks/Register/__position/register__position.css);
+@import url(./blocks/Register/__error/__error.css);
 
 
 @import url(./blocks/Login/login.css);

@@ -9,7 +9,7 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
   const [inputText, setInputText] = React.useState("");
   const [filteredMovies, setFilteredMovies] = React.useState([]);
-  const [сhec, setChec] = React.useState(false);
+  const [сhec, setсhec] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [notSeacthFilm, setnotSeacthFilm] = React.useState(false);
 
@@ -39,22 +39,22 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
     }
   };
 
-  //
   const handleSearchChange = (e) => {
     e.preventDefault();
     setInputText(e.target.value);
   };
 
-  //
   const handleChebox = () => {
-      setChec(!сhec);
+    if (inputText !== "") {
+      setсhec(!сhec);
       handleFilterMovies(inputText, !сhec);
+    }
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleFilterMovies = (inputValueFilter, done) => {
     localStorage.setItem("inputValue", JSON.stringify(inputValueFilter));
-    localStorage.setItem("switchСheck", JSON.stringify(done));
+    localStorage.setItem("checkboxState", JSON.stringify(done));
 
     setnotSeacthFilm(false);
     setIsLoading(true);
@@ -75,10 +75,7 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
           );
         });
         setFilteredMovies(newFilteredData);
-        localStorage.setItem(
-          "localStorageSafeMovie",
-          JSON.stringify(newFilteredData)
-        );
+        localStorage.setItem("searchedMovies", JSON.stringify(newFilteredData));
       } else if (!done) {
         newFilteredData = movies.filter((movie) => {
           return (
@@ -89,10 +86,7 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
           );
         });
         setFilteredMovies(newFilteredData);
-        localStorage.setItem(
-          '"localStorageSafeMovie"',
-          JSON.stringify(newFilteredData)
-        );
+        localStorage.setItem("searchedMovies", JSON.stringify(newFilteredData));
       }
 
       if (newFilteredData.length === 0) {
@@ -103,21 +97,21 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
     }, 2000);
   };
 
-  const searchedMovies = localStorage.getItem("localStorageSafeMovie");
-  const localInputValue = localStorage.getItem("inputValueFavorite");
-  const localCheckbox = localStorage.getItem("checkboxStateFavorite");
+  const searchedMovies = localStorage.getItem("searchedMovies");
+  const localInputValue = localStorage.getItem("inputValue");
+  const localCheckbox = localStorage.getItem("checkboxState");
 
   React.useEffect(() => {
     if (searchedMovies) {
       setFilteredMovies(JSON.parse(searchedMovies));
     }
     if (localCheckbox) {
-      setChec(JSON.parse(localCheckbox));
+      setсhec(JSON.parse(localCheckbox));
     }
     if (localInputValue) {
       setInputText(JSON.parse(localInputValue));
     }
-  }, [localCheckbox, localInputValue, searchedMovies]);
+  }, [searchedMovies, localCheckbox, localInputValue]);
 
   return (
     <section className="searchForm">
@@ -128,8 +122,7 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
         handleInput={handleSearchChange}
         inputValueFilter={inputText}
       />
-      {
-      isLoading ? (
+      {isLoading ? (
         <Preloader />
       ) : notSeacthFilm ? (
         <p className="Movie__notMovie">Ничего не найдено</p>
@@ -140,9 +133,13 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
           transSafeMovie={transSafeMovie}
         />
       )}
-      <button onClick={handleAddContent} className="still" type="button">
-        Ещё
-      </button>
+      {isLoading ? (
+        ""
+      ) : (
+        <button onClick={handleAddContent} className="still" type="button">
+          Ещё
+        </button>
+      )}
     </section>
   );
 }

@@ -22,7 +22,7 @@ function MoviesCard({
   }
 
   const likeIdMovie = safeMovies
-    ? safeMovies.find((item) => item.movieId === movie.id)
+    ? safeMovies.find((card) => card.movieId === movie.id)
     : '';
 
   const statusLike = safeMovies
@@ -68,6 +68,7 @@ function MoviesCard({
             onClick={buttonDeleteClick}
             type="button"
             className="moviesCard__button-delete"
+            alt="Удалить фильм"
           />
         )}
       </div>

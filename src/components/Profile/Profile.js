@@ -1,28 +1,24 @@
 import React from "react";
+import  { useForm }  from "../../utils/useForm";
+
 function Profile({signOut, buttonSafeProfil, userData}) {
-  
-  const [formValue, setFormValue] = React.useState({
-    email: "",
-    name: "",
+  const { formValue, handleChange, errors, isValid } = useForm({
+    name: '',
+    email: '',
   });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValue({
-      ...formValue,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    buttonSafeProfil(formValue);
-  }; 
+    if (isValid) {
+      buttonSafeProfil({
+        name: formValue.name, email: formValue.email
+      });
+    }
+  }
 
   return (
     <section className="profil">
       <h2 className="profil__info">
-      Привет, {userData.name}!
+      Привет, {formValue.name || userData.name}!
       </h2>
       <form className="profil__form" onSubmit={handleSubmit}>
         <div className="profil__input">
@@ -31,11 +27,14 @@ function Profile({signOut, buttonSafeProfil, userData}) {
             name="name"
             type="text"
             placeholder="Имя"
+            minLength="2"
+            maxLength="40"
             required
             value={formValue.name || userData.name}
             onChange={handleChange}
             className="profil__input-name"
           />
+          {isValid ? '' : <span className="register__error">{errors.name}</span>}
         </div>
         <div className="profil__input">
           <p className="profil__name">E-mail</p>
@@ -43,18 +42,22 @@ function Profile({signOut, buttonSafeProfil, userData}) {
             name="email"
             type="email"
             placeholder="E-mail"
+            minLength="3"
+            maxLength="40"
             required
             value={formValue.email || userData.email}
             onChange={handleChange}
             className="profil__input-name"
           />
+          {isValid ? '' : <span className="register__error">{errors.email}</span>}
         </div>
       </form>
       <div className="profil__box-button">
         <button
-          className="profil__singup"
+          className={`profil__singup ${!isValid ? "register__button-disable" : ""}`}
           type="button"
           onClick={handleSubmit}
+          disabled={!isValid}
         >
           Редактировать
         </button>
