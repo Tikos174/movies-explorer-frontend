@@ -1,7 +1,7 @@
 import logo from "../../images/logo_register.svg";
 import React from "react";
 import { useForm } from "../../utils/useForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function Login({ handeLogin, loggedIn }) {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ function Login({ handeLogin, loggedIn }) {
           value={formValue.email}
           onChange={handleChange}
           className="register__input-name"
-          minLength="3"
+          minLength="9"
           maxLength="40"
           required
         />
@@ -49,8 +49,7 @@ function Login({ handeLogin, loggedIn }) {
           type="password"
           name="password"
           minLength="3"
-          maxLength="40"
-          autocomplete="on"
+          maxLength="20"
           required
           className="register__input-name"
           value={formValue.password || ""}
@@ -65,9 +64,9 @@ function Login({ handeLogin, loggedIn }) {
       </form>
       <div className="register__bottom-box">
         <h2 className="register__text-login">Ещё не зарегистрированы?</h2>
-        <a href="/signup" className="register__singin">
+        <NavLink to="/signup" className="register__singin">
           Регистрация
-        </a>
+        </NavLink>
       </div>
     </section>
   );

@@ -45,10 +45,8 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
   };
 
   const handleChebox = () => {
-    if (inputText !== "") {
       setсhec(!сhec);
       handleFilterMovies(inputText, !сhec);
-    }
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

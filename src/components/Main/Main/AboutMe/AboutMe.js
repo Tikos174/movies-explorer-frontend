@@ -15,7 +15,7 @@ function AboutMe() {
           После того, как прошёл курс по веб-разработке, начал заниматься
           фриланс-заказами и ушёл с постоянной работы.
         </p>
-        <a href='' className='aboutMe__githab'>Github</a>
+        <a href='https://github.com/Tikos174' className='aboutMe__githab'>Github</a>
         </div>
           <img alt='Моя фотография' className='aboutMe__photo' src={photo}></img>
       </div>

@@ -1,4 +1,4 @@
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function Error() {
   const navigate = useNavigate();
@@ -11,9 +11,9 @@ function Error() {
     <section className="error">
         <h2 className="error__title">404</h2>
         <p className="error__name">Страница не найдена</p>
-        <a onClick={back} className="error__back">
+        <NavLink onClick={back} className="error__back">
         Назад
-        </a>
+        </NavLink>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import logo from "../../images/logo_register.svg";
 import  { useForm }  from "../../utils/useForm";
 
@@ -71,9 +71,8 @@ function Register({ handeRegister, loggedIn }) {
           onChange={handleChange}
           type="password"
           name="password"
-          autocomplete="on"
           className="register__input-name"            
-          minLength="6"
+          minLength="9"
           maxLength="20"
           required
         />
@@ -87,9 +86,9 @@ function Register({ handeRegister, loggedIn }) {
 
       <div className="register__bottom-box">
         <h2 className="register__text-login">Уже зарегистрированы?</h2>
-        <a href="/signin" className="register__singin">
+        <NavLink to="/signin" className="register__singin">
           Войти
-        </a>
+        </NavLink>
       </div>
     </section>
   );

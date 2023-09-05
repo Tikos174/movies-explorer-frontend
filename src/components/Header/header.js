@@ -1,11 +1,9 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 
 function Header({loggedIn, onEditProfile}) {
   const { pathname } = useLocation();
-
-    const [loggenInImage, setLoggenInImage] = React.useState(false);
-
+  
   return (
     <>
 
@@ -15,45 +13,45 @@ function Header({loggedIn, onEditProfile}) {
         }`}>
         <div className="header__background">
           <div className="header__actinProfil">
-            <a href="/" className="header__icon"></a>
-            <a
-              href="/movies"
+            <NavLink to="/" className="header__icon"></NavLink>
+            <NavLink
+              to="/movies"
               className={`header__linkfilm ${loggedIn ? "window-open" : ""}`}
             >
               Фильмы
-            </a>
-            <a
-              href="/saved-movies"
+            </NavLink>
+            <NavLink
+              to="/saved-movies"
               className={`header__linkSaveFilm ${
                 loggedIn ? "window-open" : ""
               }`}
             >
               Сохранённые фильмы
-            </a>
+            </NavLink>
           </div>
           <div className="header__button">
-            <a
-              href="/signup"
+            <NavLink
+              to="/signup"
               className={`header__singup ${loggedIn ? "window-hidden" : ""}`}
             >
               Регистрация
-            </a>
-            <a
-              href="/signin"
+            </NavLink>
+            <NavLink
+              to="/signin"
               className={`header__singin ${loggedIn ? "window-hidden" : ""}`}
             >
               Войти
-            </a>
+            </NavLink>
             <button
               onClick={onEditProfile}
               className={`header__buttonpopUp ${
-                loggenInImage ? "window-hidden" : ""
+                !loggedIn ? "window-hidden" : ""
               }`}
             ></button>
-            <a
-              href="/profile"
+            <NavLink
+              to="/profile"
               className={`header__iconAccount ${loggedIn ? "window-open" : ""}`}
-            ></a>
+            ></NavLink>
           </div>
         </div>
       </header>
