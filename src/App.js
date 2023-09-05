@@ -139,13 +139,12 @@ function App() {
 
   const nandleDeleteLocalCard = (id) => {
     const deleteSafeCardMovie = JSON.parse(
-      localStorage.getItem("localStorageSaveMovie")
+      localStorage.getItem("localStorageSafeMovieFavorite")
     );
     if (deleteSafeCardMovie) {
       const newDeleteSafeCardMovie = deleteSafeCardMovie.filter(
         (movie) => movie._id !== id
       );
-
       localStorage.setItem(
         "localStorageSaveMovie",
         JSON.stringify(newDeleteSafeCardMovie)
