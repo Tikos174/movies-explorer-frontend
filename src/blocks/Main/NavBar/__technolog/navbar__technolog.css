@@ -1,0 +1,21 @@
+.navbar__technolog{
+    margin: 0;
+    color: #ffffff;
+    margin-right: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 40px 0 40px;
+}
+
+.navbar__technolog:hover{
+  color: #9e9393;
+  transition: 0.5s
+}
+
+
+@media screen and (max-width: 3320px) {
+    .navbar__technolog{
+        margin: 0 20px 0 20px;
+    }
+}
+

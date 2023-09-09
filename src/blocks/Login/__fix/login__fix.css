@@ -1,0 +1,38 @@
+.login__fix {
+  margin: 202px 0 13px 0;
+  padding: 0;
+  width: 396px;
+  height: 45px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #4285f4;
+  color: #ffffff;
+  border: none;
+}
+
+@media screen and (max-width: 430px) {
+  .login__fix {
+    margin: 217px 0 16px 0;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login__fix {
+    margin: 194px 0 13px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login__fix {
+    margin: 287px 0 13px 0;
+  }
+}

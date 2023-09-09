@@ -1,0 +1,22 @@
+.aboutProject {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  height: 500px;
+  padding-top: 110px;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutProject {
+    padding-top: 92px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .aboutProject {
+    padding-top: 70px;
+    height: 560px;
+  }
+}

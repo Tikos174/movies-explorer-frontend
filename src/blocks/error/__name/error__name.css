@@ -1,0 +1,10 @@
+.error__name {
+  margin-top: 74px;
+}
+
+@media screen and (max-width: 320px) {
+  .error__name {
+    margin-top: 42px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,22 @@
+.techs__technologies-info{
+    max-width: 500px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .techs__technologies-info{
+        max-width: 470px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .techs__technologies-info{
+        max-width: 275px;
+        font-size: 11px;
+        line-height: 19px;
+    }
+}

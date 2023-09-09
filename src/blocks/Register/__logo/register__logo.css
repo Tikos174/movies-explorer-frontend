@@ -1,0 +1,10 @@
+.register__logo {
+  margin: 0;
+}
+
+@media screen and (max-width: 430px) {
+  .register__logo {
+    min-width: 38px;
+    min-height: 38px;
+  }
+}

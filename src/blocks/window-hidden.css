@@ -1,0 +1,11 @@
+.window-hidden{
+    opacity: 0;
+    display: none;
+}
+
+/* @media screen and (max-width: 768px) {
+    .window-hidden{
+        display: flex;
+        opacity: 1;
+    }
+} */

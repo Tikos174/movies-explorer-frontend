@@ -1,0 +1,17 @@
+.error__back{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #4285F4;
+    margin: 167px 0 204px 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+    .error__back {
+        margin: 269px 0 254px 0;
+    }
+  }
+

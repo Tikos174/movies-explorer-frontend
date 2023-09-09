@@ -1,0 +1,25 @@
+.header__singin{
+    margin: 0;
+    color: #000000;
+    padding: 8px 20px 8px 20px;
+    background-color: #3DDC84;
+    border-radius: 5px;
+    max-width: 76px;
+    max-height: 32px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    text-decoration: none;
+}
+
+.header__singin:hover{
+    color: #9e9393;
+    transition: 0.5s
+}
+
+@media screen and (max-width: 320px) {
+    .header__singin{
+        padding: 4px 16px 4px 16px;
+        font-size: 9px;
+    }
+}

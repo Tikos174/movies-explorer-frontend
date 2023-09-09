@@ -1,0 +1,22 @@
+.moviesCard__button-save{
+    margin: 0px 13px 32px 0px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #313131;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    .moviesCard__button-save {
+        margin: 0px 11px 22px 0px;
+    }
+  }
+
+  @media screen and (max-width: 430px){
+.smoviesCard__button-save {
+    margin: 13px 0 0 211px;
+}
+}

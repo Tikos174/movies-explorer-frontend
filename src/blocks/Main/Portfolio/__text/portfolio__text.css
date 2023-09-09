@@ -1,0 +1,18 @@
+.portfolio__text{
+  margin: 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 50px;
+  color: #FFFFFF;
+}
+
+.portfolio__text:hover{
+    color: #9e9393;
+    transition: 0.5s
+  }
+
+@media screen and (max-width: 441px) {
+  .portfolio__text{
+      font-size: 17px;
+  }
+}

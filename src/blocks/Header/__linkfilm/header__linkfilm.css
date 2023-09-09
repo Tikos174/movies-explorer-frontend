@@ -1,0 +1,21 @@
+.header__linkfilm{
+    margin: 0 0 0 44px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    opacity: 0;
+    display: none;
+}
+
+.header__linkfilm:hover{
+    color: #9e9393;
+    transition: 0.5s
+}
+
+@media screen and (max-width: 320px) {
+    .header__linkfilm{
+        margin: 0 0 0 31px;
+    }
+}

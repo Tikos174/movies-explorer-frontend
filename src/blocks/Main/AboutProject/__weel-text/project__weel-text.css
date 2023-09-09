@@ -1,0 +1,12 @@
+.project__weel-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8b8b8b;
+}
+
+@media screen and (max-width: 350px) {
+  .project__weel-text {
+    font-size: 9px;
+  }
+}
