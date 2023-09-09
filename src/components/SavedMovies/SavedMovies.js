@@ -4,7 +4,7 @@ import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 
 function SavedMovies({ safeMovies, transDeleteCardMovie }) {
   const [сhec, setсhec] = React.useState(false);
-  const [inputText, setInputText] = React.useState("");
+  const [inputText, setInputText] = React.useState('');
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [notSeacthFilm, setnotSeacthFilm] = React.useState(false);
 
@@ -13,22 +13,21 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
     setInputText(e.target.value);
   };
 
-  const handleChebox = () => {
+  const handleChebox = () => {    
       setсhec(!сhec);
       handleFilterMovies(inputText, !сhec);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleFilterMovies = (inputValueFilter, done) => {
+  const handleFilterMovies = (inputValueFilter, isCheckedState) => {
     localStorage.setItem(
-      "inputValueFavorite",
+      "inputValFavorite",
       JSON.stringify(inputValueFilter)
     );
-    localStorage.setItem("checkboxStateFavorite", JSON.stringify(done));
+    localStorage.setItem("checkboxStateFavorite", JSON.stringify(isCheckedState));
 
     let newFilteredData = [];
 
-    if (done) {
+    if (isCheckedState) {
       newFilteredData = safeMovies.filter((movie) => {
         return (
           (movie.nameRU
@@ -42,10 +41,10 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
       });
       setFilteredMovies(newFilteredData);
       localStorage.setItem(
-        "localStorageSafeMovieFavorite",
+        "searchedMoviesFavorite",
         JSON.stringify(newFilteredData)
       );
-    } else if (!done) {
+    } else if (!isCheckedState) {
       newFilteredData = safeMovies.filter((movie) => {
         return (
           movie.nameRU.toLowerCase().includes(inputValueFilter.toLowerCase()) ||
@@ -54,7 +53,7 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
       });
       setFilteredMovies(newFilteredData);
       localStorage.setItem(
-        "localStorageSafeMovieFavorite",
+        "searchedMoviesFavorite",
         JSON.stringify(newFilteredData)
       );
     }
@@ -64,33 +63,20 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
     }
   };
 
-  const searchedMovies = localStorage.getItem("localStorageSafeMovieFavorite");
-  const localInputValue = localStorage.getItem("inputValueFavorite");
-  const localCheckbox = localStorage.getItem("checkboxStateFavorite");
+  // const searchedMovies = localStorage.getItem('searchedMoviesFavorite');
+  // const localCheckbox = localStorage.getItem('checkboxStateFavorite');
+
+  // React.useEffect(() => {
+  //   if (searchedMovies) {
+  //     setFilteredMovies(JSON.parse(searchedMovies));
+  //   }
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [searchedMovies, localCheckbox]);
 
   React.useEffect(() => {
-    if (searchedMovies) {
-      setFilteredMovies(JSON.parse(searchedMovies));
-    }
-    if (localCheckbox) {
-      setсhec(JSON.parse(localCheckbox));
-    }
-    if (localInputValue) {
-      setInputText(JSON.parse(localInputValue));
-      handleFilterMovies(
-        JSON.parse(localInputValue),
-        JSON.parse(localCheckbox)
-      );
-    }
-  }, [searchedMovies, localCheckbox, localInputValue]);
-
-  React.useEffect(() => {
-    if (searchedMovies) {
-      setFilteredMovies(JSON.parse(searchedMovies));
-    } else {
       setFilteredMovies(safeMovies);
-    }
-  }, [searchedMovies, safeMovies]);
+  }, [safeMovies]);
+
   return (
     <>
       <SearchForm
@@ -100,14 +86,18 @@ function SavedMovies({ safeMovies, transDeleteCardMovie }) {
         inputValueFilter={inputText}
         procesFilter={handleFilterMovies}
       />
+          <section className="moviesCardList">
       {filteredMovies.length ? (
         <MoviesCardList
           movies={filteredMovies}
           transDeleteCardMovie={transDeleteCardMovie}
         />
       ) : (
+        notSeacthFilm && (
         <p className="Movie__notMovie">Ничего не найдено</p>
+        )
       )}
+      </section>
     </>
   );
 }

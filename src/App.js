@@ -32,7 +32,6 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [movies, setMovies] = React.useState([]);
   const [safeMovies, setSafeMovies] = React.useState([]);
-  const [userData, setUserData] = React.useState("");
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
     React.useState(false);
 
@@ -86,14 +85,13 @@ function App() {
   React.useEffect(() => {
     loggedIn &&
       Promise.all([getUserInfo(), getAllCards(), getSavedMovies()])
-        .then(([data, dataMovie, dataSaveMovie]) => {
+        .then(([data, dataMovie, savedArray]) => {
           setCurrentUser(data);
-          setUserData(data.user);
           setMovies(dataMovie);
-          setSafeMovies(dataSaveMovie);
+          setSafeMovies(savedArray);
           localStorage.setItem(
-            "localStorageSaveMovie",
-            JSON.stringify(dataSaveMovie)
+            "savedMoviesArray",
+            JSON.stringify(savedArray)
           );
         })
         .catch((err) => {
@@ -105,7 +103,18 @@ function App() {
     updateUserInfo(data)
       .then((data) => {
         setCurrentUser(data);
+        chelDataProfil(setCurrentUser);
         alert("готово");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function chelDataProfil() {
+    getUserInfo()
+      .then((data) => {
+        setCurrentUser(data);
       })
       .catch((err) => {
         console.log(err);
@@ -126,47 +135,47 @@ function App() {
     }
   }
 
-  function transDeleteSaveMovie(id) {
-    deleteSaveMovie(id)
+  function transDeleteSaveMovie(_id) {
+    deleteSaveMovie(_id)
       .then(() => {
-        setSafeMovies(safeMovies.filter((m) => m._id !== id));
-        nandleDeleteLocalCard();
+        setSafeMovies(safeMovies.filter((m) => m._id !== _id));
+        console.log(_id)
       })
       .catch((err) => {
         console.log(err);
       });
+
+      const filteredFavoriteMovies = JSON.parse(
+        localStorage.getItem('searchedMoviesFavorite'),
+      );
+  
+      if (filteredFavoriteMovies) {
+        const newFilteredFavoriteMoviesArr = filteredFavoriteMovies.filter(
+          (movie) => movie._id !== _id,
+        );
+  
+        localStorage.setItem(
+          'searchedMoviesFavorite',
+          JSON.stringify(newFilteredFavoriteMoviesArr),
+        );
+      }
   }
 
-  const nandleDeleteLocalCard = (id) => {
-    const deleteSafeCardMovie = JSON.parse(
-      localStorage.getItem("localStorageSafeMovieFavorite")
-    );
-    if (deleteSafeCardMovie) {
-      const newDeleteSafeCardMovie = deleteSafeCardMovie.filter(
-        (movie) => movie._id !== id
-      );
-      localStorage.setItem(
-        "localStorageSaveMovie",
-        JSON.stringify(newDeleteSafeCardMovie)
-      );
-    }
-  };
-
-  const localSafeMovies = localStorage.getItem("localStorageSaveMovie");
+  const localFavoriteMovies  = localStorage.getItem("savedMoviesArray");
 
   React.useEffect(() => {
-    if (localSafeMovies) {
-      setSafeMovies(JSON.parse(localSafeMovies));
+    if (localFavoriteMovies ) {
+      setSafeMovies(JSON.parse(localFavoriteMovies ));
     }
-  }, [localSafeMovies]);
+  }, [localFavoriteMovies ]);
 
   const handleSignOut = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("searchedMovies");
-    localStorage.removeItem("inputValue");
+    localStorage.removeItem("inputVal");
     localStorage.removeItem("checkboxState");
-    localStorage.removeItem("localStorageSafeMovieFavorite");
-    localStorage.removeItem("inputValueFavorite");
+    localStorage.removeItem("searchedMoviesFavorite");
+    localStorage.removeItem("savedMoviesArray");
     localStorage.removeItem("checkboxStateFavorite");
     navigate("/", { replace: true });
     setLoggedIn(false);
@@ -232,7 +241,7 @@ function App() {
                     buttonSafeProfil={handleUpdateName}
                     transUpdateName={handleUpdateName}
                     loggedIn={loggedIn}
-                    userData={userData}
+                    // userData={userData}
                   />
                 }
               />
@@ -243,7 +252,7 @@ function App() {
           {pathname === "/" ||
           pathname === "/movies" ||
           pathname === "/saved-movies" ||
-          pathname === "/profile"  ? (
+          pathname === "/profile" ? (
             <Footer />
           ) : null}
         </main>

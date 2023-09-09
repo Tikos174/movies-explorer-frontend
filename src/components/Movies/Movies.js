@@ -45,13 +45,13 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
   };
 
   const handleChebox = () => {
-      setсhec(!сhec);
-      handleFilterMovies(inputText, !сhec);
+    setсhec(!сhec);
+    handleFilterMovies(inputText, !сhec);
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleFilterMovies = (inputValueFilter, done) => {
-    localStorage.setItem("inputValue", JSON.stringify(inputValueFilter));
+    localStorage.setItem("inputVal", JSON.stringify(inputValueFilter));
     localStorage.setItem("checkboxState", JSON.stringify(done));
 
     setnotSeacthFilm(false);
@@ -96,7 +96,7 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
   };
 
   const searchedMovies = localStorage.getItem("searchedMovies");
-  const localInputValue = localStorage.getItem("inputValue");
+  const localInputVal = localStorage.getItem("inputVal");
   const localCheckbox = localStorage.getItem("checkboxState");
 
   React.useEffect(() => {
@@ -106,10 +106,10 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
     if (localCheckbox) {
       setсhec(JSON.parse(localCheckbox));
     }
-    if (localInputValue) {
-      setInputText(JSON.parse(localInputValue));
+    if (localInputVal) {
+      setInputText(JSON.parse(localInputVal));
     }
-  }, [searchedMovies, localCheckbox, localInputValue]);
+  }, [searchedMovies, localCheckbox, localInputVal]);
 
   return (
     <section className="searchForm">
@@ -134,9 +134,15 @@ function Movies({ movies, safeMovies, transSafeMovie }) {
       {isLoading ? (
         ""
       ) : (
-        <button onClick={handleAddContent} className="still" type="button">
-          Ещё
-        </button>
+        <div>
+          {filteredMovies.length > renderCardsMovies.length ? (
+            <button onClick={handleAddContent} className="still" type="button">
+              Ещё
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       )}
     </section>
   );

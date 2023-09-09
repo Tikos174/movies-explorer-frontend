@@ -33,7 +33,7 @@ function SearchForm({
             type="checkbox"
             id="switch"
             onChange={switching}
-            checked={сhec || ''}
+            checked={сhec}
           />
           <label htmlFor="switch"></label>
           <h2 className="searchForm__switch-block">Короткометражки</h2>

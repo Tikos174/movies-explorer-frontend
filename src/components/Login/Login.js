@@ -1,7 +1,7 @@
 import logo from "../../images/logo_register.svg";
 import React from "react";
-import { useForm } from "../../utils/useForm";
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useForm, validateEmail } from "../../utils/useForm";
+import { useNavigate, NavLink } from "react-router-dom";
 
 function Login({ handeLogin, loggedIn }) {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Login({ handeLogin, loggedIn }) {
 
   React.useEffect(() => {
     if (loggedIn) {
-      navigate('/movies');
+      navigate("/movies");
     }
   }, [loggedIn, navigate]);
 
@@ -35,7 +35,7 @@ function Login({ handeLogin, loggedIn }) {
           type="email"
           placeholder="Email"
           name="email"
-          value={formValue.email}
+          value={formValue.email || ""}
           onChange={handleChange}
           className="register__input-name"
           minLength="9"
@@ -57,8 +57,13 @@ function Login({ handeLogin, loggedIn }) {
         />
         <span className="register__error">{errors.password}</span>
         <button
-          className={`login__fix ${!isValid ? "register__button-disable" : ""}`}
-          disabled={!isValid} >
+          className={`login__fix ${
+            isValid && validateEmail(formValue.email).activeButton
+              ? ""
+              : "register__button-disable"
+          }`}
+          type="submit"
+        >
           Войти
         </button>
       </form>

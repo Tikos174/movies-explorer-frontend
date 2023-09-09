@@ -66,8 +66,8 @@ export function localStorageSaveMovie(movie) {
   }).then((res) => checkResponse(res));
 }
 
-export function deleteSaveMovie(id) {
-  return fetch(`${URL}/movies/${id}`, {
+export function deleteSaveMovie(_id) {
+  return fetch(`${URL}/movies/${_id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

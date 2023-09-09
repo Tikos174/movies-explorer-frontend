@@ -7,21 +7,19 @@ function MoviesCardList({
   transDeleteCardMovie,
 }) {
   return (
-    <section className="moviesCardList">
       <ul className="moviesCardList">
-        {movies.map((card) => {
+        {movies.map((item) => {
           return (
             <MoviesCard
             transSafeMovie={transSafeMovie}
             safeMovies={safeMovies}
             transDeleteCardMovie={transDeleteCardMovie}
-            movie={card}
-            key={card.id || card.movieId}
+            movie={item}
+            key={item.id || item.movieId}
             />
           );
         })}
       </ul>
-    </section>
   );
 }
 

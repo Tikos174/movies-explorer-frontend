@@ -9,7 +9,7 @@ function Popup({ isOpen, isClose }) {
         <NavLink to="/movies" className="popup__textFilm">
           Фильмы
         </NavLink>
-        <NavLink href="/saved-movies" className="popup__textSafeFilm">
+        <NavLink to="/saved-movies" className="popup__textSafeFilm">
           Сохраненные фильмы
         </NavLink>
         <NavLink href="/profile" className="popup__accoutd"></NavLink>

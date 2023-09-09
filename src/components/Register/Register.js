@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, NavLink } from 'react-router-dom';
 import logo from "../../images/logo_register.svg";
-import  { useForm }  from "../../utils/useForm";
+import  { useForm, validateEmail }  from "../../utils/useForm";
 
 function Register({ handeRegister, loggedIn }) {
   const navigate = useNavigate();
@@ -78,8 +78,13 @@ function Register({ handeRegister, loggedIn }) {
         />
         <span className="register__error">{errors.password}</span>
         <button
-          className={`register__link-login ${!isValid ? "register__button-disable" : ""}`}
-          disabled={!isValid} >
+          className={`register__link-login ${
+            isValid && validateEmail(formValue.email).activeButton
+              ? ""
+              : "register__button-disable"
+          }`}
+          type="submit"
+          >
           Зарегистрироваться
         </button>
       </form>

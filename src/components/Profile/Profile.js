@@ -1,24 +1,31 @@
 import React from "react";
-import  { useForm }  from "../../utils/useForm";
+import { useForm } from "../../utils/useForm";
+import { CurrentUserContext } from "../../utils/CurrentUserContext";
 
-function Profile({signOut, buttonSafeProfil, userData}) {
-  const { formValue, handleChange, errors, isValid } = useForm({
+function Profile({signOut, buttonSafeProfil}) {
+
+  const { formValue, handleChange, errors, isValid, setformValue } = useForm({
     name: '',
     email: '',
   });
+
+  const currentUser = React.useContext(CurrentUserContext);
+
   function handleSubmit(e) {
     e.preventDefault();
-    if (isValid) {
       buttonSafeProfil({
         name: formValue.name, email: formValue.email
       });
-    }
   }
+
+  React.useEffect(() => {
+    setformValue(currentUser);
+  }, [currentUser, setformValue]);
 
   return (
     <section className="profil">
       <h2 className="profil__info">
-      Привет, {formValue.name || userData.name}!
+      Привет, {currentUser.name}!
       </h2>
       <form className="profil__form" onSubmit={handleSubmit}>
         <div className="profil__input">
@@ -30,7 +37,7 @@ function Profile({signOut, buttonSafeProfil, userData}) {
             minLength="2"
             maxLength="40"
             required
-            value={formValue.name || userData.name}
+            value={formValue.name}
             onChange={handleChange}
             className="profil__input-name"
           />
@@ -45,7 +52,7 @@ function Profile({signOut, buttonSafeProfil, userData}) {
             minLength="3"
             maxLength="40"
             required
-            value={formValue.email || userData.email}
+            value={formValue.email}
             onChange={handleChange}
             className="profil__input-name"
           />
